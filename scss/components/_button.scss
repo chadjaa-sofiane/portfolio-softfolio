@@ -1,0 +1,29 @@
+@use "../abstracts/" as *;
+
+.buttonGroupe {
+  margin-top: 2em;
+  padding: 0;
+  @include flex(none, center, wrap);
+}
+
+.button {
+  border-radius: 5px;
+  background-color: hsl(var(--primary_color));
+  color: white;
+  transition: 50ms;
+  transition-property: transform, filter;
+  &--secondary {
+    background-color: hsl(var(--secondary_color));
+  }
+  &--warning {
+    background-color: hsl(var(--warning_color));
+  }
+  &:hover {
+    transform: scale(1.01);
+    filter: brightness(0.95);
+  }
+  &:active {
+    transform: scale(0.99);
+    filter: brightness(1.1);
+  }
+}

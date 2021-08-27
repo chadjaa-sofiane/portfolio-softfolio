@@ -1,0 +1,38 @@
+@mixin container {
+  padding: 0 2em;
+}
+
+@mixin pseudo($loc, $width: 0, $height: 0, $top, $right, $bottom, $left) {
+  &::#{$loc} {
+    content: "";
+    position: absolute;
+    width: $width;
+    height: $height;
+    @if ($top) {
+      top: $top;
+    }
+    @if ($left) {
+      left: $left;
+    }
+    @if ($right) {
+      right: $right;
+    }
+    @if ($bottom) {
+      bottom: $bottom;
+    }
+    @content;
+  }
+}
+
+@mixin flex($justify-content, $align-items, $wrap) {
+  display: flex;
+  @if ($justify-content) {
+    justify-content: $justify-content;
+  }
+  @if ($align-items) {
+    align-items: $align-items;
+  }
+  @if ($wrap) {
+    flex-wrap: $wrap;
+  }
+}

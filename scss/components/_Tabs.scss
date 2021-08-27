@@ -1,0 +1,44 @@
+@use "@scss/abstracts" as *;
+
+.Tabs {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid hsl(var(--primary_color));
+  font-size: 1.2rem;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__Tab {
+    position: relative;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.7em 0;
+    min-width: 8em;
+    overflow-x: hidden;
+    @include pseudo(after, 0, 3px, none, none, 0, 50%) {
+      background-color: hsl(var(--primary_color) / 0.6);
+      transition: 200ms ease-in;
+      transition-property: width left font-weight;
+    }
+
+    &:hover {
+      font-weight: 700;
+    }
+    &:hover::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+  input[type="radio"]:checked + label {
+    font-weight: 700;
+    background-color: hsl(var(--primary_color) / 0);
+    @include pseudo(after, 100%, 3px, none, none, 0, 0) {
+      background-color: hsl(var(--primary_color));
+    }
+  }
+  @include breakpoint(medium) {
+    font-size: 1rem;
+  }
+}
