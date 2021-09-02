@@ -1,17 +1,17 @@
 $text_color: hsl(var(--text_color));
 $hover_color: hsl(var(--primary_color));
+
 .header {
   position: fixed;
+  top: 0;
+  left:0;
   z-index: 1;
   width: 100%;
   display: flex;
-  padding: 1em 2em;
+  padding: 1em 4em;
   color: $text_color;
   background-color: hsl(var(--header_color));
   isolation: isolate;
-  &__active {
-    background: red;
-  }
   span {
     color: $hover_color;
   }
@@ -48,6 +48,13 @@ $hover_color: hsl(var(--primary_color));
           left: 0;
           width: 100%;
         }
+      }
+    }
+    .active {
+      position: relative;
+      @include pseudo(after, 100%, 3px, none, none, 0, 0) {
+        font-weight: 700;
+        background-color: $hover_color;
       }
     }
   }

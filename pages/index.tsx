@@ -3,10 +3,11 @@ import Image from "next/image";
 import styles from "@scss/index.module.scss";
 import Services from "@containers/home/Services";
 import MyTools from "@containers/home/MyTools";
+import MyTeam from "@containers/home/MyTeam";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>softfolio</title>
         <meta name="description" content="softfolio home page" />
@@ -46,9 +47,10 @@ export default function Home() {
             </div>
           </div>
           <Services />
-          <MyTools/>
+          <MyTools />
+          <MyTeam />
         </div>
       </main>
-    </div>
+    </>
   );
 }

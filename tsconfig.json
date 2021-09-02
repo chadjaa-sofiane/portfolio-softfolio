@@ -25,7 +25,9 @@
       "@containers/*":["containers/*"],
       "@store/*":["store/*"],
       "@lib/*":["lib/*"],
-      "@public/*":["public/*"]
+      "@models/*":["models/*"],
+      "@public/*":["public/*"],
+      "@util/*":["util/*"],
     }
   },
   "include": [

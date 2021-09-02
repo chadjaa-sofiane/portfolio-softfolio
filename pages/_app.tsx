@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import { Provider } from "react-redux";
+import styles from "@scss/index.module.scss";
 import store from "@store/index";
 import Background from "@components/background";
 import Header from "@components/Header";
@@ -9,10 +10,12 @@ import "@scss/index.scss";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Background />
       <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <div className={styles.container}>
+        <Background />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
     </Provider>
   );
 }

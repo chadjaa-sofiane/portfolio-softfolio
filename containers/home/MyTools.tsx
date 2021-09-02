@@ -1,4 +1,4 @@
-import React, { useState, useMemo, lazy } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Card, CardContent } from "@components/Card";
 import { Tabs, Tab } from "@components/Tabs";
 import useObserver from "@lib/hooks/useObserver";
@@ -17,23 +17,29 @@ function MyTools() {
   const [tools, setTools] = useState([]);
   const [toolsRef, servicesComponentApears]: any = useObserver({
     isIntersecting: true,
-    options: { threshold: 0.5 },
+    options: { threshold: 0.25 },
     disconnect: true,
   });
   function filterToolsInfo(n) {
-    console.log(n);
-    function setField(field: string): tools[] {
+    const setField = (field: string): tools[] => {
       return initialState.filter((t) => t.field === field);
-    }
+    };
     switch (n) {
-      case 0:
-        return setTools([...initialState]);
-      case 1:
-        return setTools([...setField("front-end")]);
-      case 2:
-        return setTools([...setField("back-end")]);
-      case 3:
-        return setTools([...setField("mobile")]);
+      case "0":
+        setTools([...initialState]);
+        break;
+      case "1":
+        setTools([...setField("front-end")]);
+        break;
+      case "2":
+        setTools([...setField("back-end")]);
+        break;
+      case "3":
+        setTools([...setField("data-base")]);
+        break;
+      case "4":
+        setTools([...setField("mobile")]);
+        break;
       default:
         return;
     }
@@ -44,8 +50,7 @@ function MyTools() {
   }, []);
   function handleActiveTabs(e) {
     setActive(e.target.value);
-    filterToolsInfo(active);
-    console.log(tools);
+    filterToolsInfo(e.target.value);
   }
   return (
     <div
@@ -59,7 +64,8 @@ function MyTools() {
         <Tab value={0}>All</Tab>
         <Tab value={1}>Front End</Tab>
         <Tab value={2}>Back End</Tab>
-        <Tab value={3}>Mobile Developer</Tab>
+        <Tab value={3}>Data Base</Tab>
+        <Tab value={4}>Mobile Developer</Tab>
       </Tabs>
       <div className={styles.tools__container}>
         {tools.map(({ name, link, Icon }, index) => (
@@ -93,8 +99,18 @@ import SemanticUiIcon from "@public/svgs/tools/semantic-ui.svg";
 import WebpackIcon from "@public/svgs/tools/webpack.svg";
 import ExpressIcon from "@public/svgs/tools/express.svg";
 import GraphqlIcon from "@public/svgs/tools/graphql.svg";
+import ElectronIcon from "@public/svgs/tools/electron.svg";
+import SassIcon from "@public/svgs/tools/sass.svg";
+import ReactSepringIcon from "@public/svgs/tools/react-spring.svg";
 import JwtIcon from "@public/svgs/tools/jwt.svg";
-import { useEffect } from "react";
+import FastifyIcon from "@public/svgs/tools/fastify.svg";
+import ApolloIcon from "@public/svgs/tools/apollo.svg";
+import GulpIcon from "@public/svgs/tools/gulp.svg";
+import PugIcon from "@public/svgs/tools/pug.svg";
+import EjsIcon from "@public/svgs/tools/ejs.svg";
+import MongodbIcon from "@public/svgs/tools/mongodb.svg";
+import PostgresqlIcon from "@public/svgs/tools/postgresql.svg";
+import RedisIcon from "@public/svgs/tools/redis.svg";
 
 const toolsInfo = [
   {
@@ -116,6 +132,12 @@ const toolsInfo = [
     Icon: NextIcon,
   },
   {
+    name: "gatsby",
+    field: "front-end",
+    link: "",
+    Icon: GatsbyIcon,
+  },
+  {
     name: "Redux",
     field: "front-end",
     link: "",
@@ -126,12 +148,6 @@ const toolsInfo = [
     field: "front-end",
     link: "",
     Icon: BootstrapIcon,
-  },
-  {
-    name: "gatsby",
-    field: "front-end",
-    link: "",
-    Icon: GatsbyIcon,
   },
   {
     name: "material-ui",
@@ -146,10 +162,52 @@ const toolsInfo = [
     Icon: SemanticUiIcon,
   },
   {
+    name: "react-spring",
+    field: "front-end",
+    link: "",
+    Icon: ReactSepringIcon,
+  },
+  {
     name: "webpack",
     field: "front-end",
     link: "",
     Icon: WebpackIcon,
+  },
+  {
+    name: "sass",
+    field: "front-end",
+    link: "",
+    Icon: SassIcon,
+  },
+  {
+    name: "apollo",
+    field: "front-end",
+    link: "",
+    Icon: ApolloIcon,
+  },
+  {
+    name: "electron",
+    field: "front-end",
+    link: "",
+    Icon: ElectronIcon,
+  },
+  {
+    name: "mongodb",
+    field: "data-base",
+    link: "",
+    Icon: MongodbIcon,
+  },
+  {
+    name: "postgresql",
+    field: "data-base",
+    link: "",
+    Icon: PostgresqlIcon,
+  },
+  {
+    name: "redis",
+    field: "data-base",
+    link: "",
+    Icon: RedisIcon,
   },
   {
     name: "express",
@@ -164,10 +222,34 @@ const toolsInfo = [
     Icon: GraphqlIcon,
   },
   {
-    name: "json-web-token",
+    name: "jwt",
     field: "back-end",
     link: "",
     Icon: JwtIcon,
+  },
+  {
+    name: "fastify",
+    field: "back-end",
+    link: "",
+    Icon: FastifyIcon,
+  },
+  {
+    name: "gulp",
+    field: "back-end",
+    link: "",
+    Icon: GulpIcon,
+  },
+  {
+    name: "pug",
+    field: "back-end",
+    link: "",
+    Icon: PugIcon,
+  },
+  {
+    name: "ejs",
+    field: "back-end",
+    link: "",
+    Icon: EjsIcon,
   },
 ];
 

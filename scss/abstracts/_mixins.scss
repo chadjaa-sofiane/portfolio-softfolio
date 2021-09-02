@@ -1,6 +1,4 @@
-@mixin container {
-  padding: 0 2em;
-}
+@use "breakPoints" as *;
 
 @mixin pseudo($loc, $width: 0, $height: 0, $top, $right, $bottom, $left) {
   &::#{$loc} {
@@ -34,5 +32,15 @@
   }
   @if ($wrap) {
     flex-wrap: $wrap;
+  }
+}
+
+@mixin container {
+  width: 1330px;
+  max-width: 1330px;
+  padding: 0 4em;
+  margin: auto;
+  @include breakpoint(medium) {
+    padding: 0 1.5em;
   }
 }

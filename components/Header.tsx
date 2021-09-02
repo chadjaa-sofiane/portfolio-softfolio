@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
+import Link from "next/link";
 import styles from "@scss/index.module.scss";
+import { useRouter } from "next/dist/client/router";
 
 function Header() {
   return (
@@ -8,14 +11,23 @@ function Header() {
       </div>
       <nav>
         <ul>
-          <li>Home</li>
-          <li>Blogs</li>
-          <li>contact</li>
-          <li>About</li>
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/exposition">exposition</NavLink>
+          <NavLink href="/blogs">blogs</NavLink>
+          <NavLink href="/contact">contact</NavLink>
         </ul>
       </nav>
     </header>
   );
 }
+
+const NavLink = ({ href = "/", children }) => {
+  const { pathname } = useRouter();
+  return (
+    <li className={pathname === href ? styles.active : ""}>
+      <Link href={href}>{children}</Link>
+    </li>
+  );
+};
 
 export default Header;

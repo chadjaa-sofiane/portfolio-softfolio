@@ -2,17 +2,20 @@
   max-width: 1440px;
   margin: auto;
   min-height: 100vh;
+  padding: 0 4em;
   display: flex;
   flex-direction: column;
   color: hsl(var(--text_color));
+  margin-top: 4em;
+  @include breakpoint(medium) {
+    padding: 0 1em;
+  }
 }
 
 .body {
   width: 100%;
   flex: 1;
   backdrop-filter: blur(0.05em);
-  padding: 5em;
-  @include container;
   &__description {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
@@ -26,10 +29,6 @@
   }
   .aboutMe {
     flex: 1;
-    @include breakpoint(medium) {
-      padding: 0;
-      text-align: center;
-    }
     span:nth-child(2) {
       color: hsl(var(--secondary_color));
     }
@@ -158,5 +157,40 @@
   &::after {
     width: 100%;
     transition: width 1000ms;
+  }
+}
+
+.myTeam {
+  &__wrapper {
+    width: 100%;
+    background-color: hsl(var(--background_color) / 0.8);
+    padding: 1em 0;
+  }
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
+    gap: 2em;
+  }
+  &__card {
+    box-shadow: 0 0 5px 1px hsl(var(--secondary_color));
+    &__pecture {
+      position: relative;
+      width: 15em;
+      max-width: 20em;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      transition: border-radius 300ms ease, transform 400ms ease;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      &:hover {
+        border-radius: 0;
+        transform: scale(1.05);
+      }
+    }
   }
 }

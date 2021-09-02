@@ -1,14 +1,25 @@
-import { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import Image from "next/image";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 import styles from "@scss/index.module.scss";
+import { Menu, MenuItem } from "@components/Menu";
 
 interface cardProps {
   src?: string;
-  className?: string | object;
+  className?: string;
 }
 interface cardContentProps {
   title?: string;
   subTitle?: string;
+}
+
+interface cardActionsProps {
+  avatar?: ReactElement;
+  actions?: Action[];
+}
+interface Action {
+  label: string;
+  cb(): any;
 }
 
 export const Card: FC<cardProps> = ({ children, src, className }) => {
@@ -20,6 +31,25 @@ export const Card: FC<cardProps> = ({ children, src, className }) => {
         </div>
       )}
       {children}
+    </div>
+  );
+};
+
+export const CardHeader: FC<cardActionsProps> = ({ avatar, actions }) => {
+  return (
+    <div className={styles.card__header}>
+      {avatar && <div className={styles.card_avatar}> {avatar} </div>}
+      {actions?.length > 0 && (
+        <Menu className={styles.card__header__actions} right label={<MoreVertIcon />}>
+          {actions.map((m, index) => {
+            return (
+              <MenuItem key={index} action={m.cb}>
+                {m.label}
+              </MenuItem>
+            );
+          })}
+        </Menu>
+      )}
     </div>
   );
 };
