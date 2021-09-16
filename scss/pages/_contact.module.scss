@@ -1,0 +1,35 @@
+.contact {
+  &__container {
+    width: 100%;
+    max-width: 40em;
+    margin: 5em auto;
+    background-color: hsl(var(--background_color));
+    box-shadow: 0 0 0.1em hsl(var(--primary_color));
+    border-radius: 0.2em;
+    .inputText {
+      margin: 0.5em 0;
+    }
+  }
+  &__title {
+    font-size: 2rem;
+    padding: 0.5em 0;
+    color: hsl(var(--primary_color));
+    border-bottom: 0.1em solid hsl(var(--primary_color));
+    text-align: center;
+  }
+  &__form__field {
+    padding: 1em;
+    h3 {
+      color: hsl(var(--primary_color));
+      font-size: 1.5rem;
+    }
+  }
+  &__btn__field {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__error__message {
+    color: hsl(var(--error_color));
+    font-size: 1.2rem;
+  }
+}

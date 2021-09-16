@@ -1,0 +1,29 @@
+@use "../abstracts/mixins" as *;
+
+.inputText {
+  all: unset;
+  background-color: transparent;
+  box-shadow: 0 0 0.1em hsl(var(--primary_color));
+  border: 0.025em solid transparent;
+  border-radius: 0.1em;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: text;
+  overflow: hidden;
+  height: auto;
+  &:focus {
+    border: 0.025em solid hsl(var(--primary_color));
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  &--error {
+    box-shadow: 0 0 0.1em hsl(var(--error_color));
+    &:focus {
+      border: 0.025em solid hsl(var(--error_color));
+    }
+  }
+}

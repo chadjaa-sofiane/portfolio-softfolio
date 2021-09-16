@@ -1,10 +1,24 @@
 import Message from "@models/message.model";
+import { NextApiRequest, NextApiResponse } from "next";
 
-export default async (req, res) => {
+//http://localhost:3000/api/messages
+
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const messages = await Message.find();
-    return res.status(200).json(messages);
+    const { method, body } = req;
+    switch (method) {
+      case "GET":
+        break;
+      case "POST":
+        const newMessage = new Message(body);
+        const result = await newMessage.save();
+        res.status(200).json(result);
+        break;
+      default:
+        res.status(500);
+        break;
+    }
   } catch (e) {
-    return res.status(500).json({ error: e.message });
+    return res.status(400).json(e);
   }
 };
