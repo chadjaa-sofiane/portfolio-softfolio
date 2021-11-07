@@ -1,3 +1,24 @@
+@use "./breakPoints" as *;
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600;700&family=Ubuntu:wght@300;500&display=swap");
 
 $font-global: "Source Sans Pro", "Ubuntu", sans-serif;
+
+@mixin font-size {
+  --fs-xl: 3rem;
+  --fs-lg: 2.5rem;
+  --fs-700: 2rem;
+  --fs-600: 1.75rem;
+  --fs-500: 1.5rem;
+  --fs-400: 1.25rem;
+  --fs-300: 1rem;
+
+  @include breakpoint(medium) {
+    --fs-xl: 2.25rem;
+    --fs-lg: 2.5rem;
+    --fs-700: 2.0625rem;
+    --fs-600: 1.3125rem;
+    --fs-500: 1.125rem;
+    --fs-400: 1.9375rem;
+    --fs-300: 0.75rem;
+  }
+}

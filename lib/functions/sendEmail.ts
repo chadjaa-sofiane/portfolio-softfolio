@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 // I think I don't have to change "from" every time , so I will make it static
 
-interface sendEmailI {
+interface ISendEmailI {
   body: JSX.Element;
   subject: string;
   text: string;
@@ -11,10 +11,8 @@ interface sendEmailI {
   to: string;
 }
 
-const sendEmail = async ({ body, ...restEmailAttr }: sendEmailI) => {
-  const html = ReactDOMServer.renderToString(body);
-  console.log(html);
-  
+const sendEmail = async ({ body, ...restEmailAttr }: ISendEmailI) => {
+  // const html = ReactDOMServer.renderToString(body);  
   /* let testAccount = await nodemailer.createTestAccount();
 
   let transporter = nodemailer.createTransport({

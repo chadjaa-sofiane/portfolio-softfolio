@@ -12,7 +12,7 @@ interface textFieldProps {
   onChange?: ChangeEventHandler;
 }
 
-const textField: FC<textFieldProps> = ({
+const TextField: FC<textFieldProps> = ({
   label,
   multiline,
   rows = 1,
@@ -49,7 +49,4 @@ const textField: FC<textFieldProps> = ({
   );
 };
 
-export default textField;
-function ussRef(arg0: null) {
-  throw new Error("Function not implemented.");
-}
+export default TextField;

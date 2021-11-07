@@ -8,31 +8,31 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
 }
 h2 {
-  font-size: 2.3rem;
+  font-size: var(--fs-lg);
   font-weight: 650;
 }
 h3 {
-  font-size: 2.1rem;
+  font-size: var(--fs-700);
   font-weight: 600;
 }
 h4 {
-  font-size: 1.9rem;
+  font-size: var(--fs-600);
   font-weight: 550;
 }
 h5 {
-  font-size: 1.7rem;
+  font-size: var(--fs-500);
   font-weight: 550;
 }
 h6 {
-  font-size: 1.5rem;
+  font-size: var(--fs-400);
   font-weight: 550;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: var(--fs-400);
   font-weight: 550;
 }

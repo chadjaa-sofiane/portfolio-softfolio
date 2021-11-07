@@ -13,6 +13,7 @@
   box-sizing: border-box;
   cursor: text;
   overflow: hidden;
+  white-space: pre-wrap;
   height: auto;
   &:focus {
     border: 0.025em solid hsl(var(--primary_color));

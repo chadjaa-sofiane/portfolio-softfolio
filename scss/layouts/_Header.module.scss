@@ -16,10 +16,10 @@ $hover_color: hsl(var(--primary_color));
     color: $hover_color;
   }
   nav {
-    @include flex(flex-end, none, none);
+    @include flex(flex-end, false, false);
     flex: 1;
     @include breakpoint(medium) {
-      display: none;
+      display: false;
     }
     ul {
       display: flex;
@@ -38,7 +38,7 @@ $hover_color: hsl(var(--primary_color));
           font-weight: 700;
           transition: 150ms font-weight;
         }
-        @include pseudo(after, 0, 2px, none, none, 0, 50%) {
+        @include pseudo(after, 0, 2px, false, false, 0, 50%) {
           background-color: $hover_color;
           transform: translateY(-50);
           transition: ease-in 150ms;
@@ -52,7 +52,7 @@ $hover_color: hsl(var(--primary_color));
     }
     .active {
       position: relative;
-      @include pseudo(after, 100%, 3px, none, none, 0, 0) {
+      @include pseudo(after, 100%, 3px, false, false, 0, 0) {
         font-weight: 700;
         background-color: $hover_color;
       }

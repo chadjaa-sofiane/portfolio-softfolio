@@ -1,4 +1,4 @@
-import { useRef, useState, useMemo, useEffect } from "react";
+import { useRef, useState, useMemo, useEffect, MutableRefObject } from "react";
 
 interface optionalParamsI {
   options?: IntersectionObserverInit;
@@ -6,16 +6,16 @@ interface optionalParamsI {
   disconnect?: boolean;
 }
 
-const useObserver = (
+const useObserver = <R extends HTMLElement>(
   optionalParams: optionalParamsI = {},
   callBack = (): any => {}
-) => {
+): [MutableRefObject<R> , boolean]=> {
   const {
     options = {},
     isIntersecting = false,
     disconnect = false,
   } = optionalParams;
-  const ref = useRef(null);
+  const ref = useRef<R>(null);
   const [active, setActive] = useState(false);
   const initialoptions = useMemo(() => options, []);
   useEffect(() => {

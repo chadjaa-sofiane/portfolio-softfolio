@@ -17,7 +17,7 @@
     padding: 0.7em 0;
     min-width: 8em;
     overflow-x: hidden;
-    @include pseudo(after, 0, 3px, none, none, 0, 50%) {
+    @include pseudo(after, 0, 3px, false, false, 0, 50%) {
       background-color: hsl(var(--primary_color) / 0.6);
       transition: 200ms ease-in;
       transition-property: width left font-weight;
@@ -34,7 +34,7 @@
   input[type="radio"]:checked + label {
     font-weight: 700;
     background-color: hsl(var(--primary_color) / 0);
-    @include pseudo(after, 100%, 3px, none, none, 0, 0) {
+    @include pseudo(after, 100%, 3px, false, false, 0, 0) {
       background-color: hsl(var(--primary_color));
     }
   }

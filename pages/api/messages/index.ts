@@ -6,8 +6,11 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { method, body } = req;
+
     switch (method) {
       case "GET":
+        const messages = await Message.find();
+        res.status(200).json(messages);
         break;
       case "POST":
         const newMessage = new Message(body);

@@ -1,35 +1,41 @@
 .contact {
   &__container {
     width: 100%;
-    max-width: 40em;
-    margin: 5em auto;
-    background-color: hsl(var(--background_color));
-    box-shadow: 0 0 0.1em hsl(var(--primary_color));
-    border-radius: 0.2em;
-    .inputText {
-      margin: 0.5em 0;
-    }
-  }
-  &__title {
-    font-size: 2rem;
-    padding: 0.5em 0;
-    color: hsl(var(--primary_color));
-    border-bottom: 0.1em solid hsl(var(--primary_color));
-    text-align: center;
-  }
-  &__form__field {
-    padding: 1em;
-    h3 {
-      color: hsl(var(--primary_color));
-      font-size: 1.5rem;
-    }
-  }
-  &__btn__field {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em auto;
   }
-  &__error__message {
-    color: hsl(var(--error_color));
-    font-size: 1.2rem;
+}
+
+.contactUs {
+  width: 60em;
+  max-width: 100%;
+  display: grid;
+  background-color: red;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  border-radius: 0.2em;
+  background-color: hsl(var(--background_color));
+  box-shadow: 0 0 0.1em hsl(var(--primary_color));
+  overflow: hidden;
+  .form {
+    grid-column: 3 span;
+  }
+  &__desc {
+    background-color: hsl(var(--primary_color));
+    grid-column: 2 span;
+    padding: 1rem 2em;
+    h1 {
+      color: #fff;
+      font-size: 2rem;
+      text-align: center;
+    }
+    &__img {
+      border-radius: 50%;
+    }
+    &__text {
+      color: #FFF;
+      font-size: var(--fs-500);
+    }
   }
 }

@@ -7,7 +7,7 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import "@scss/index.scss";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <Header />
@@ -18,6 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </div>
     </Provider>
   );
-}
+};
 
 export default MyApp;

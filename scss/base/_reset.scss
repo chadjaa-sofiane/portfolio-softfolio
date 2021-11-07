@@ -14,6 +14,7 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 300;
   color: hsl(var(--text_color));
+  scroll-snap-type: y mandatory;
 }
 
 ul {
@@ -26,9 +27,5 @@ a {
 }
 button {
   all: unset;
-  padding: 0.6em 1em;
-  margin: 0 0.5em;
   cursor: pointer;
-  font-weight: 600;
-  margin-bottom: 1em;
 }

@@ -1,8 +1,9 @@
-// light mode colors
-$text_light_color: 0 0% 0%;
-$primary_light_color: 244 100% 40%;
-$secondary_light_color: 0 96% 55%;
-$error_light_color: 349 100% 35%;
-$warning_light_color: 0 0% 50%;
-$background_light_color: 0 0% 100%;
-$header_light_color: 0 0% 100%;
+@mixin colors {
+  --text_color: 0 0% 0%;
+  --primary_color: 244 100% 40%;
+  --secondary_color: 0 96% 55%;
+  --error_color: 1 100% 45%;
+  --warning_color: 0 0% 50%;
+  --background_color: 0 0% 100%;
+  --header_color: 0 0% 100%;
+}

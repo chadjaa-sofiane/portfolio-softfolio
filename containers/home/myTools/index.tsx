@@ -1,10 +1,11 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { Card, CardContent } from "@components/Card";
-import { Tabs, Tab } from "@components/Tabs";
+import Tabs, { Tab } from "@components/Tabs";
 import useObserver from "@lib/hooks/useObserver";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styles from "@scss/index.module.scss";
 
-interface tools {
+interface ITools {
   name: string;
   field: string;
   link: string;
@@ -12,16 +13,20 @@ interface tools {
 }
 
 function MyTools() {
-  const initialState: tools[] = useMemo(() => toolsInfo, []);
-  const [active, setActive] = useState(0);
-  const [tools, setTools] = useState([]);
+  const initialState: ITools[] = useMemo(() => toolsInfo, []);
+
+  const [active, setActive] = useState<ActiveValue>(0);
+
+  const [tools, setTools] = useState(initialState);
+
   const [toolsRef, servicesComponentApears]: any = useObserver({
     isIntersecting: true,
     options: { threshold: 0.25 },
     disconnect: true,
   });
+
   function filterToolsInfo(n) {
-    const setField = (field: string): tools[] => {
+    const setField = (field: string): ITools[] => {
       return initialState.filter((t) => t.field === field);
     };
     switch (n) {
@@ -45,12 +50,12 @@ function MyTools() {
     }
   }
   useEffect(() => {
-    setTools([...initialState]);
     filterToolsInfo(active);
   }, []);
-  function handleActiveTabs(e) {
-    setActive(e.target.value);
-    filterToolsInfo(e.target.value);
+
+  function handleActiveTabs(value) {
+    setActive(value);
+    filterToolsInfo(value.toString());
   }
   return (
     <div
@@ -60,29 +65,42 @@ function MyTools() {
       }`}
     >
       <h1 className={styles.title}> MY TOOLS </h1>
-      <Tabs onChange={handleActiveTabs} value={active}>
-        <Tab value={0}>All</Tab>
+      <Tabs onChange={handleActiveTabs} name="tools" value={active}>
+        <Tab value={0} active={true}>
+          All
+        </Tab>
         <Tab value={1}>Front End</Tab>
         <Tab value={2}>Back End</Tab>
         <Tab value={3}>Data Base</Tab>
         <Tab value={4}>Mobile Developer</Tab>
       </Tabs>
-      <div className={styles.tools__container}>
-        {tools.map(({ name, link, Icon }, index) => (
-          <Card key={index} className={styles.tools__card}>
-            <CardContent>
-              <a
-                href={link}
-                target="_blank"
-                className={styles.tools__IconField}
-              >
-                <Icon />
-              </a>
-              <h6 className={styles.tools__title}>{name}</h6>
-            </CardContent>
-          </Card>
+      <TransitionGroup className={styles.tools__container}>
+        {tools?.map(({ name, link, Icon }, index) => (
+          <CSSTransition
+            key={index}
+            timeout={200}
+            classNames={{
+              enter: styles["tools__item__transition-enter"],
+              enterActive: styles["tools__item__transition-enter-active"],
+              exit: styles["tools__item__transition-exit"],
+              exitActive: styles["tools__item__transition-exit-active"],
+            }}
+          >
+            <Card className={styles.tools__card}>
+              <CardContent>
+                <a
+                  href={link}
+                  target="_blank"
+                  className={styles.tools__IconField}
+                >
+                  <Icon />
+                </a>
+                <h6 className={styles.tools__title}>{name}</h6>
+              </CardContent>
+            </Card>
+          </CSSTransition>
         ))}
-      </div>
+      </TransitionGroup>
     </div>
   );
 }
@@ -111,6 +129,7 @@ import EjsIcon from "@public/svgs/tools/ejs.svg";
 import MongodbIcon from "@public/svgs/tools/mongodb.svg";
 import PostgresqlIcon from "@public/svgs/tools/postgresql.svg";
 import RedisIcon from "@public/svgs/tools/redis.svg";
+import { ActiveValue } from "@components/Tabs";
 
 const toolsInfo = [
   {

@@ -1,4 +1,3 @@
-import React, { FC, ReactElement } from "react";
 import Image from "next/image";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import styles from "@scss/index.module.scss";
@@ -7,14 +6,11 @@ import { Menu, MenuItem } from "@components/Menu";
 interface cardProps {
   src?: string;
   className?: string;
-}
-interface cardContentProps {
-  title?: string;
-  subTitle?: string;
+  onClick?: React.MouseEventHandler;
 }
 
 interface cardActionsProps {
-  avatar?: ReactElement;
+  avatar?: React.ReactElement;
   actions?: Action[];
 }
 interface Action {
@@ -22,9 +18,14 @@ interface Action {
   cb(): any;
 }
 
-export const Card: FC<cardProps> = ({ children, src, className }) => {
+export const Card: React.FC<cardProps> = ({
+  children,
+  src,
+  className = "",
+  onClick,
+}) => {
   return (
-    <div className={`${styles.card} ${className}`}>
+    <div className={`${styles.card} ${className}`} onClick={onClick}>
       {src && (
         <div className={styles.card__pecture}>
           <Image src={src} layout="fill" />
@@ -35,12 +36,16 @@ export const Card: FC<cardProps> = ({ children, src, className }) => {
   );
 };
 
-export const CardHeader: FC<cardActionsProps> = ({ avatar, actions }) => {
+export const CardHeader: React.FC<cardActionsProps> = ({ avatar, actions }) => {
   return (
     <div className={styles.card__header}>
       {avatar && <div className={styles.card_avatar}> {avatar} </div>}
       {actions?.length > 0 && (
-        <Menu className={styles.card__header__actions} right label={<MoreVertIcon />}>
+        <Menu
+          className={styles.card__header__actions}
+          right
+          label={<MoreVertIcon />}
+        >
           {actions.map((m, index) => {
             return (
               <MenuItem key={index} action={m.cb}>
@@ -54,21 +59,11 @@ export const CardHeader: FC<cardActionsProps> = ({ avatar, actions }) => {
   );
 };
 
-export const CardContent: FC<cardContentProps> = ({
-  title,
-  subTitle,
-  children,
-}) => {
+export const CardContent: React.FC = ({ children }) => {
   return (
     <div>
-      <div className={styles.card__container}>
-        {title && <h3 className={styles.card__title}> {title} </h3>}
-        {subTitle && <h5 className={styles.card__subTitle}>{subTitle}</h5>}
-        {children}
-      </div>
+      <div className={styles.card__container}>{children}</div>
     </div>
   );
 };
-export const CardIcon: FC = ({ children }) => {
-  return <div className={styles.card__fieldIcon}>{children}</div>;
-};
+

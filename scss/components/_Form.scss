@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  &__field {
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+    color: hsl(var(--primary_color));
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  &__input {
+    all: unset;
+    margin-top: 0.25em;
+    font-size: 1.4rem;
+    padding: 0.25em 0.5em;
+    font-weight: 550;
+    box-shadow: 0 0 0.1em hsl(var(--primary_color));
+    &--error {
+      //   outline: 0.1em solid hsl(var(--error_color));
+      box-shadow: 0 0 0.1em .05em hsl(var(--error_color));
+    }
+  }
+  &__errors__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__error {
+    margin-top: 0.5em;
+    color: red;
+    font-size: 1.3rem;
+    font-weight: 600;
+    // color: hsm(var(--error_color));
+  }
+  &__buttons__field {
+    width: 100%;
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

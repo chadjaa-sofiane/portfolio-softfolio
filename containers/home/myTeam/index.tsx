@@ -14,8 +14,9 @@ function MyTeam() {
             <CardContent>
               {/* <h3 className={styles.myTeam__card__name}> {f.name}</h3> */}
               <div className={styles.myTeam__card__pecture}>
-                <Image src={f.image} width="400" height="400" />j
+                <Image src={f.image} width="400" height="400" />
               </div>
+              <h3 className={styles.myTeam__card__name}>{f.name}</h3>
             </CardContent>
           </Card>
         ))}

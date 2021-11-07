@@ -7,23 +7,32 @@
 }
 
 .button {
+  --effect-clr: var(--primary_color);
+  font-size: var(--fs-400);
+  padding: 0.4em 1em;
+  margin: 0 0.5em;
   border-radius: 5px;
-  background-color: hsl(var(--primary_color));
+  font-weight: 550;
+  background-color: hsl(var(--primary_color) / 0.8);
   color: white;
   transition: 50ms;
-  transition-property: transform, filter;
+  transition-property: background-color;
   &--secondary {
-    background-color: hsl(var(--secondary_color));
+    --effect-clr: var(--secondary_color);
+    background-color: hsl(var(--secondary_color) / 0.8);
   }
   &--warning {
-    background-color: hsl(var(--warning_color));
+    --effect-clr: var(--warning_color);
+    background-color: hsl(var(--warning_color) / 0.8);
   }
-  &:hover {
-    transform: scale(1.01);
-    filter: brightness(0.95);
+  &:hover,
+  &:focus {
+    background-color: hsl(var(--effect-clr));
   }
-  &:active {
-    transform: scale(0.99);
-    filter: brightness(1.1);
+  &:focus {
+    outline: 0.2em solid hsl(var(--effect-clr) / 0.6);
+  }
+  &:disabled {
+    background-color: hsl(var(--effect-clr) / 0.5);
   }
 }
