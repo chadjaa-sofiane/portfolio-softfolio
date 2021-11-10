@@ -1,0 +1,22 @@
+.description {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  margin-top: 8em;
+  &__text {
+    flex: 1;
+    span:nth-child(2) {
+      color: hsl(var(--secondary_color));
+    }
+    .myName {
+      color: hsl(var(--primary_color));
+    }
+    .myJob {
+      color: hsl(var(--secondary_color));
+    }
+    .descriptionText {
+      margin-top: 1.5em;
+      text-align: justify;
+      font-size: 1.3rem;
+    }
+  }
+}

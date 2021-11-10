@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import useObserver from "@lib/hooks/useObserver";
 import styles from "@scss/index.module.scss";
 import ServicesCards from "./ServicesCards";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import FrontEnd from "@components/services/FrontEnd";
 
-// chnange .5 to .25
-function Services() {
+interface IServicesContext {
+  service?: string;
+  setService?: (string) => void;
+}
+
+export const ServicesContext = createContext<IServicesContext>({});
+
+const Services = () => {
   const [service, setService] = useState("");
   const [servicesRef, servicesComponentApears]: any = useObserver({
     isIntersecting: true,
@@ -13,44 +20,44 @@ function Services() {
     disconnect: true,
   });
   return (
-    <div
-      ref={servicesRef}
-      className={`${styles.services__wrapper} ${
-        servicesComponentApears && styles.homeComponentsApears
-      }`}
-      id="services"
+    <ServicesContext.Provider
+      value={{ service, setService: (s) => setService(s) }}
     >
-      <h1 className={styles.title}>My Services</h1>
-      <TransitionGroup>
-        <CSSTransition
-          timeout={500}
-          key={service}
-          classNames={{
-            enter: styles["services__transition--enter"],
-            enterActive: styles["services__transition--enter-active"],
-            exit: styles["services__transition--exit"],
-            exitActive: styles["services__transition--exit-active"],
-          }}
-        >
-          <>
-            {!service && (
-              <ServicesCards setService={(service) => setService(service)} />
-            )}
-            {service === "front-end" && (
-              <ServiceCard setService={setService}> frond end </ServiceCard>
-            )}
-            {service === "back-end" && (
-              <ServiceCard setService={setService}> back end </ServiceCard>
-            )}
-            {service === "mobile" && (
-              <ServiceCard setService={setService}> mobile </ServiceCard>
-            )}
-          </>
-        </CSSTransition>
-      </TransitionGroup>
-    </div>
+      <div
+        ref={servicesRef}
+        className={`${styles.services__wrapper} ${
+          servicesComponentApears ? styles.homeComponentsApears : ""
+        }`}
+        id="services"
+      >
+        <h1 className={styles.title}>My Services</h1>
+        <TransitionGroup>
+          <CSSTransition
+            timeout={500}
+            key={service}
+            classNames={{
+              enter: styles["services__transition--enter"],
+              enterActive: styles["services__transition--enter-active"],
+              exit: styles["services__transition--exit"],
+              exitActive: styles["services__transition--exit-active"],
+            }}
+          >
+            <>
+              {!service && <ServicesCards />}
+              {service === "front-end" && <FrontEnd />}
+              {service === "back-end" && (
+                <ServiceCard setService={setService}> back end </ServiceCard>
+              )}
+              {service === "mobile" && (
+                <ServiceCard setService={setService}> mobile </ServiceCard>
+              )}
+            </>
+          </CSSTransition>
+        </TransitionGroup>
+      </div>
+    </ServicesContext.Provider>
   );
-}
+};
 
 const ServiceCard = (props) => {
   return (

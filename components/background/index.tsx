@@ -1,4 +1,4 @@
-import { useMemo, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "@scss/index.module.scss";
 import Shape from "./Shape";
 import { generateNumbers, randomIntFromInterval } from "@lib/functions/numbers";
@@ -32,27 +32,25 @@ const addNewShapeDimention = (existStyles, element): Dimentions => {
   return newEl;
 };
 
+const generateInitialShapes = (numberOfShapes) => {
+  const shapesDementions: Dimentions[] = [];
+  generateNumbers(numberOfShapes).forEach((e) => {
+    shapesDementions.push(addNewShapeDimention(shapesDementions, e));
+  });
+  return shapesDementions;
+};
+
 function Background() {
-  const [numberOfShapes, setNumberOfShapes] = useState(1);
-
-  const initialShapes = useMemo(() => {
-    const shapesDementions: Dimentions[] = [];
-    generateNumbers(numberOfShapes).forEach((e) => {
-      shapesDementions.push(addNewShapeDimention(shapesDementions, e));
-    });
-    return shapesDementions;
-  }, [numberOfShapes]);
-
-  const [shapes, setShapes] = useState(initialShapes);
+  const [shapes, setShapes] = useState([]);
 
   useEffect(() => {
-    setNumberOfShapes(Math.floor(window.innerWidth / (16 * 5)));
+    setShapes(generateInitialShapes(Math.floor(window.innerWidth / (16 * 5))));
   }, []);
 
   const changeShapeDimention = (index: number) => {
-    const newShapes = shapes.filter((s) => s.index !== index);
-    const shape = addNewShapeDimention(shapes, index);
-    newShapes.push(shape);
+    // const newShapes = shapes.filter((s) => s.index !== index);
+    // const shape = addNewShapeDimention(shapes, index);
+    // newShapes.push(shape);
   };
 
   return (

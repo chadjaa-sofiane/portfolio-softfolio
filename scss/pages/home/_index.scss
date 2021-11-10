@@ -1,0 +1,60 @@
+@import "./description";
+@import "./services";
+@import "./tools";
+@import "./team";
+
+.container {
+  max-width: 1430px;
+  margin: auto;
+  min-height: 100vh;
+  padding: 0 4em;
+  display: flex;
+  flex-direction: column;
+  color: hsl(var(--text_color));
+  margin-top: 4em;
+  @include breakpoint(medium) {
+    padding: 0 1em;
+  }
+}
+
+.body {
+  width: 100%;
+  flex: 1;
+  backdrop-filter: blur(0.05em);
+  .title {
+    padding: 0.5em 0;
+    color: hsl(var(--primary_color));
+    width: 100%;
+    text-align: center;
+  }
+  .pecture {
+    &__wrapper {
+      display: flex;
+      justify-content: flex-end;
+      @include breakpoint(large) {
+        justify-content: center;
+      }
+    }
+    &__container {
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+      width: 30em;
+      max-width: 20em;
+      height: 20em;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.homeComponentsApears {
+  opacity: 1;
+  transition: opacity 1000ms;
+  &::after {
+    width: 100%;
+    transition: width 1000ms;
+  }
+}

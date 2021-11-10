@@ -3,8 +3,8 @@ import styles from "@scss/index.module.scss"
 
 const Introduction = () => {
   return (
-    <div className={styles.body__description}>
-      <div className={styles.aboutMe}>
+    <div className={styles["description"]}>
+      <div className={styles["description__text"]}>
         <h1>
           My name is
           <span className={styles.myName}> chadjaa sofiane </span>
@@ -22,14 +22,14 @@ const Introduction = () => {
             <a href="#services">My services</a>
           </button>
           <button className={styles.button}>
-            the libraries I've worked with
+            my libraries 
           </button>
           <button className={styles.button}>my skils</button>
         </div>
       </div>
       <div className={styles.pecture__wrapper}>
         <div className={styles.pecture__container}>
-          <Image src="/images/zepli.jpg" layout="fill" />
+          <Image src="/images/zepli.jpg" layout="fill" className={styles[""]} />
           sof
         </div>
       </div>

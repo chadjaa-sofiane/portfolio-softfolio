@@ -1,0 +1,56 @@
+.tools {
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    margin: 5em 0;
+    opacity: 0;
+    background-color: hsl(var(--background_color) / 0.6);
+    padding: 0.5em 0;
+    min-height: 35rem;
+    @include pseudo(after, 0, 0.2em, 0, none, none, 0) {
+      background-color: hsl(var(--primary_color));
+      transition: width 500ms ease-in;
+    }
+  }
+  &__container {
+    width: 100%;
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10em, 3fr));
+    gap: 1em;
+    div {
+      text-align: center;
+    }
+  }
+  &__card {
+    transition: background-color 100ms linear, color 100ms linear;
+  }
+  &__card:hover {
+    background-color: hsl(var(--primary_color));
+    color: white;
+    svg {
+      transform: scale(1.15);
+    }
+  }
+  &__IconField {
+    svg {
+      width: 5em;
+      height: 5em;
+      transition: transform 100ms ease-in;
+    }
+  }
+  &__item__transition-enter {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+  }
+  &__item__transition-enter-active {
+    opacity: 1;
+  }
+  &__item__transition-exit {
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+  }
+  &__item__transition-exit-active {
+    opacity: 0;
+  }
+}

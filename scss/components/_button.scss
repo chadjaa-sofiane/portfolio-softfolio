@@ -8,15 +8,19 @@
 
 .button {
   --effect-clr: var(--primary_color);
-  font-size: var(--fs-400);
-  padding: 0.4em 1em;
-  margin: 0 0.5em;
+  font-size: var(--fs-300);
+  font-family: $font-btn;
+  padding: 0.5em 1em;
+  margin: 0.5em;
   border-radius: 5px;
-  font-weight: 550;
+  font-weight: 400;
   background-color: hsl(var(--primary_color) / 0.8);
   color: white;
   transition: 50ms;
   transition-property: background-color;
+  &::first-letter {
+    text-transform: uppercase;
+  }
   &--secondary {
     --effect-clr: var(--secondary_color);
     background-color: hsl(var(--secondary_color) / 0.8);
@@ -27,7 +31,9 @@
   }
   &:hover,
   &:focus {
-    background-color: hsl(var(--effect-clr));
+    background-color: hsl(var(--effect-clr) / 0.1);
+    outline: 0.2em solid hsl(var(--effect-clr) / 0.6);
+    color: hsl(var(--effect-clr));
   }
   &:focus {
     outline: 0.2em solid hsl(var(--effect-clr) / 0.6);

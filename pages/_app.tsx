@@ -14,8 +14,8 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <div className={styles.container}>
         <Background />
         <Component {...pageProps} />
-        <Footer />
       </div>
+      <Footer />
     </Provider>
   );
 };

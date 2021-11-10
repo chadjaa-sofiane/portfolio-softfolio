@@ -6,17 +6,17 @@ import styles from "@scss/index.module.scss";
 function MyTeam() {
   const MyTeam = useMemo(() => MY_TEAM, []);
   return (
-    <div className={styles.myTeam__wrapper}>
-      <h1 className={styles.title}> MY TEAM </h1>
-      <div className={styles.myTeam__container}>
+    <div className={styles["team__wrapper"]}>
+      <h1 className={styles["title"]}> MY TEAM </h1>
+      <div className={styles["team__container"]}>
         {MyTeam?.map((f, index) => (
-          <Card key={index} className={styles.myTeam__card}>
+          <Card key={index} className={styles["team__card"]}>
             <CardContent>
               {/* <h3 className={styles.myTeam__card__name}> {f.name}</h3> */}
-              <div className={styles.myTeam__card__pecture}>
+              <div className={styles["team__card__pecture"]}>
                 <Image src={f.image} width="400" height="400" />
               </div>
-              <h3 className={styles.myTeam__card__name}>{f.name}</h3>
+              <h3 className={styles["team__card__name"]}>{f.name}</h3>
             </CardContent>
           </Card>
         ))}
