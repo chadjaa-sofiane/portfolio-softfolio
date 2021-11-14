@@ -1,0 +1,36 @@
+.progressBar {
+  &--secondary {
+    --progress-bar-clr: var(--secondary_color);
+  }
+  &--primary {
+    --progress-bar-clr: var(--primary_color);
+  }
+  &--none {
+    --progress-bar-clr: var(--warning_color);
+  }
+  &__container {
+    width: 100%;
+    margin-top: 0.5em;
+    display: flex;
+    padding: 1em 2em;
+    align-items: center;
+  }
+  &__title {
+    color: hsl(var(--progress-bar-clr));
+    font-size: var(--fs-500);
+    font-weight: 550;
+    width: 3em;
+  }
+  &__background {
+    flex: 1;
+    height: 0.5em;
+    border-radius: 0.1em;
+    background-color: hsl(var(--progress-bar-clr) / 0.3);
+  }
+  &__progress {
+    display: block;
+    width: 30%;
+    height: 100%;
+    background-color: hsl(var(--progress-bar-clr));
+  }
+}

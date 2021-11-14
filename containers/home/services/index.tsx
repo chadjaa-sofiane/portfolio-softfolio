@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 import useObserver from "@lib/hooks/useObserver";
 import styles from "@scss/index.module.scss";
 import ServicesCards from "./ServicesCards";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 import FrontEnd from "@components/services/FrontEnd";
 
 interface IServicesContext {
@@ -31,9 +31,9 @@ const Services = () => {
         id="services"
       >
         <h1 className={styles.title}>My Services</h1>
-        <TransitionGroup>
+        <SwitchTransition>
           <CSSTransition
-            timeout={500}
+            timeout={200}
             key={service}
             classNames={{
               enter: styles["services__transition--enter"],
@@ -53,7 +53,7 @@ const Services = () => {
               )}
             </>
           </CSSTransition>
-        </TransitionGroup>
+        </SwitchTransition>
       </div>
     </ServicesContext.Provider>
   );

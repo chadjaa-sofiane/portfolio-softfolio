@@ -1,6 +1,9 @@
-import Form, { Field, isEmail, OnSubmit, required } from "@components/Form";
+import { Form, Field } from "@components/Form";
+import { OnSubmit } from "@components/Form/types";
+import { required, isEmail } from "@components/Form/validations";
 import styles from "@scss/index.module.scss";
 import Image from "next/image";
+import React from "react";
 
 const initialState = {
   name: "",

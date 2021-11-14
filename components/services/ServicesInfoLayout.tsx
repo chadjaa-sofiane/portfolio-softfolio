@@ -9,15 +9,16 @@ interface IProps {
 const ServicesInfoLayout: React.FC<IProps> = (props) => {
   const context = useContext(ServicesContext);
   return (
-    <div className={styles["container"]}>
-      <h2> {props.title} </h2>
-      <button
-        style={{ float: "left" }}
-        className={styles["button"]}
-        onClick={() => context.setService("")}
-      >
-        Back
-      </button>
+    <div className={styles["servicesInfo__container"]}>
+      <div className={styles["servicesInfo__head"]}>
+        <h2 className={styles["servicesInfo__title"]}> {props.title} </h2>
+        <button
+          className={`${styles["servicesInfo__backBtn"]}`}
+          onClick={() => context.setService("")}
+        >
+          back
+        </button>
+      </div>
       {props.children}
     </div>
   );
