@@ -1,45 +1,17 @@
-import useObserver from "@lib/hooks/useObserver";
-import React from "react";
+import ExpoCard from "@containers/exposition/ExpoCard";
+import styles from "@scss/index.module.scss";
 
-function Exposition() {
-  const [refdiv, apear]: any = useObserver({
-    options: {
-      threshold: 0.25,
-    },
-  });
+const Exposition = () => {
   return (
-    <>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-      <div
-        ref={refdiv}
-        style={{
-          width: "100%",
-          height: "40em",
-          backgroundColor: apear ? "blue" : "red",
-        }}
-      ></div>
-    </>
+    <div className={styles["exposition__container"]}>
+      <ExpoCard
+        imageSrc="/images/exposition/css.png"
+        title="Css Exposition"
+        desc="here when I show my skills at pure css "
+        link="/exposition/css"
+      />
+    </div>
   );
-}
+};
 
 export default Exposition;

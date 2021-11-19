@@ -11,8 +11,8 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <Header />
+      <Background />
       <div className={styles.container}>
-        <Background />
         <Component {...pageProps} />
       </div>
       <Footer />

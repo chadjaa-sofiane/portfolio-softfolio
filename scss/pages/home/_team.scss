@@ -1,8 +1,14 @@
 .team {
   &__wrapper {
+    position: relative;
     width: 100%;
     background-color: hsl(var(--background_color) / 0.8);
+    margin: 5em 0;
     padding: 1em 0;
+    @include pseudo(after, 0, 0.2em, 0, 0, none, none) {
+      background-color: hsl(var(--primary_color));
+      transition: width 500ms ease-in;
+    }
   }
   &__container {
     position: relative;
@@ -12,7 +18,22 @@
   }
   &__card {
     position: relative;
+    margin-top: 1em;
+    padding: 2em auto;
     box-shadow: 0 0 5px 1px hsl(var(--secondary_color));
+    box-shadow: 0 0 0.1em hsl(var(--primary_color));
+    &:hover {
+      background-color: hsl(var(--primary_color));
+      color: #fff;
+      .team__card__pecture {
+        background-color: red;
+        outline: 0.2em solid #fff;
+        transform: scale(1.03);
+      }
+      .team__card__name {
+        color: #fff;
+      }
+    }
     &__pecture {
       position: relative;
       width: 15em;
@@ -21,34 +42,18 @@
       border-radius: 50%;
       overflow: hidden;
       margin: 0 auto;
-      transition: border-radius 300ms ease, transform 400ms ease;
+      outline: 0.01em solid transparent;
+      transition: outline 100ms ease-in, transform 100ms ease-in;
       img {
         width: 100%;
         object-fit: cover;
       }
-      &:hover {
-        border-radius: 0;
-        transform: scale(1.05);
-      }
     }
     &__name {
-      position: absolute;
+      font-size: var(--fs-600);
       text-align: center;
-      background-color: #fff;
-      border-radius: 0.2em;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      box-shadow: 0 0.1em 0.2em 0.025em hsl(var(--secondary_color));
       width: 100%;
-      top: 95%;
-      left: 0;
-      transform: translateY(-100%);
-      opacity: 0;
-      transition: transform 200ms ease-in;
-    }
-    &:hover &__name {
-      opacity: 1;
-      transform: translateY(0);
+      color: hsl(var(--primary_color));
     }
   }
 }

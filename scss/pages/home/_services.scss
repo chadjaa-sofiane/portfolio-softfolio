@@ -112,7 +112,31 @@
     }
   }
 }
+
 .serviceInfo {
+  &__head {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  &__title {
+    color: hsl(var(--secondary_color));
+  }
+  &__backBtn {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-50%);
+    color: hsl(var(--primary_color));
+    font-size: var(--fs-500);
+    font-weight: 550;
+    transition: transform 100ms ease-in;
+    &:hover {
+      transform: translateY(-50%) scale(1.2);
+    }
+  }
   &__container {
     width: 100%;
     display: grid;
@@ -121,15 +145,11 @@
     padding: 2em;
   }
   &__description {
-    padding: 1em;
-    display: grid;
-    place-items: center;
+    padding: 1.75em;
     p {
       text-align: justify;
-      font-size: var(--fs-500);
+      font-size: var(--fs-400);
+      line-height: 1.5em;
     }
-  }
-  &__progressBar {
-    background-color: red;
   }
 }

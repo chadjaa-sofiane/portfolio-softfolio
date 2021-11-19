@@ -1,0 +1,43 @@
+@import "./css";
+
+.exposition {
+  &__container {
+    margin-top: 5em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: 2em;
+  }
+  &__card {
+    height: max-content;
+  }
+  &__card__title {
+    font-size: var(--fs-600);
+    color: hsl(var(--primary_color));
+  }
+  &__image {
+    position: relative;
+    width: 100%;
+    padding-top: 42.85%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0.1em 0 hsl(var(--primary_color) / 0.5);
+    color: hsl(var(--primary_color));
+    &__backBtn {
+      position: absolute;
+      top: 50%;
+      left: 2em;
+      transform: translateY(-50%);
+      display: grid;
+      place-items: center;
+      color: hsl(var(--primary_color));
+    }
+  }
+}

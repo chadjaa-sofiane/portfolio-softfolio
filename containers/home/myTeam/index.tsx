@@ -1,39 +1,36 @@
-import { useMemo } from "react";
-import { Card, CardContent } from "@components/Card";
+import { Card } from "@components/Card";
 import Image from "next/image";
+import teamInfo from "public/json/team.json";
 import styles from "@scss/index.module.scss";
+import useObserver from "@lib/hooks/useObserver";
 
-function MyTeam() {
-  const MyTeam = useMemo(() => MY_TEAM, []);
+const MyTeam = () => {
+  const [teamCompoenentRef, teamComponentApear] = useObserver<HTMLDivElement>({
+    isIntersecting: true,
+    options: { threshold: 0.25 },
+    disconnect: true,
+  });
   return (
-    <div className={styles["team__wrapper"]}>
+    <div
+      ref={teamCompoenentRef}
+      className={`${styles["team__wrapper"]} ${
+        teamComponentApear ? styles.homeComponentsApears : ""
+      }`}
+    >
       <h1 className={styles["title"]}> MY TEAM </h1>
       <div className={styles["team__container"]}>
-        {MyTeam?.map((f, index) => (
+        {teamInfo?.map((f, index) => (
           <Card key={index} className={styles["team__card"]}>
-            <CardContent>
-              {/* <h3 className={styles.myTeam__card__name}> {f.name}</h3> */}
-              <div className={styles["team__card__pecture"]}>
-                <Image src={f.image} width="400" height="400" />
-              </div>
-              <h3 className={styles["team__card__name"]}>{f.name}</h3>
-            </CardContent>
+            {/* <h3 className={styles.myTeam__card__name}> {f.name}</h3> */}
+            <div className={styles["team__card__pecture"]}>
+              <Image src={f.image} width="400" height="400" />
+            </div>
+            <h3 className={styles["team__card__name"]}>{f.name}</h3>
           </Card>
         ))}
       </div>
     </div>
   );
-}
-
-const MY_TEAM = [
-  {
-    name: "ouss",
-    image: "/images/team/ouss.jpg",
-  },
-  {
-    name: "chadjaa sofiane",
-    image: "/images/zepli.jpg",
-  },
-];
+};
 
 export default MyTeam;

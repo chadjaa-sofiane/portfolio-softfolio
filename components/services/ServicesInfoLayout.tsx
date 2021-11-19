@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { ServicesContext } from "@containers/home/services";
+import BackArrow from "@material-ui/icons/ArrowBack";
+import { Card } from "@components/Card";
 import styles from "@scss/index.module.scss";
 
 interface IProps {
@@ -9,18 +11,18 @@ interface IProps {
 const ServicesInfoLayout: React.FC<IProps> = (props) => {
   const context = useContext(ServicesContext);
   return (
-    <div className={styles["servicesInfo__container"]}>
-      <div className={styles["servicesInfo__head"]}>
-        <h2 className={styles["servicesInfo__title"]}> {props.title} </h2>
+    <Card>
+      <div className={styles["serviceInfo__head"]}>
+        <h2 className={styles["serviceInfo__title"]}>{props.title}</h2>
         <button
-          className={`${styles["servicesInfo__backBtn"]}`}
+          className={`${styles["serviceInfo__backBtn"]}`}
           onClick={() => context.setService("")}
         >
-          back
+          <BackArrow />
         </button>
       </div>
       {props.children}
-    </div>
+    </Card>
   );
 };
 

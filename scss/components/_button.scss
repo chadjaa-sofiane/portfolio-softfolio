@@ -1,11 +1,5 @@
 @use "../abstracts/" as *;
 
-.buttonGroupe {
-  margin-top: 2em;
-  padding: 0;
-  @include flex(none, center, wrap);
-}
-
 .button {
   --effect-clr: var(--primary_color);
   font-size: var(--fs-300);

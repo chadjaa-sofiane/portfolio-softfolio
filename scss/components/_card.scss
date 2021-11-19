@@ -1,6 +1,7 @@
 .card {
-  background-color: hsl(var(--background_color));
+  background-color: hsl(var(--card-background-color));
   border-radius: 4px;
+  padding: 1em;
   mix-blend-mode: multiply;
   box-shadow: 0 0 2px hsl(var(--primary_color));
   text-align: center;
@@ -20,26 +21,5 @@
       width: 100%;
       object-fit: cover;
     }
-  }
-  &__header {
-    width: 100%;
-    padding: 0.5em;
-    &__actions {
-      width: 2em;
-      height: 2em;
-      float: right;
-      border-radius: 50%;
-      padding: 0.2em;
-    }
-  }
-  &__body {
-    margin-top: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  &__subTitle {
-    color: hsl(var(--secondary_color));
-    width: 100%;
   }
 }

@@ -28,12 +28,12 @@
   &__card:hover {
     background-color: hsl(var(--primary_color));
     color: white;
-    svg {
-      transform: scale(1.15);
+    img {
+      transform: scale(1.25);
     }
   }
   &__IconField {
-    svg {
+    img {
       width: 5em;
       height: 5em;
       transition: transform 100ms ease-in;

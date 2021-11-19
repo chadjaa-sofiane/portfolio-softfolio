@@ -1,5 +1,5 @@
-import ShowComponent from "hoc/ShowCompoenet";
-import withLoader from "hoc/withLoading";
+import ShowComponent from "@lib/hoc/ShowCompoenet";
+import withLoader from "@lib/hoc/withLoading";
 import { useState, useEffect } from "react";
 
 const wait = (ms: number): Promise<void> => {

@@ -1,17 +1,19 @@
 import ServicesInfoLayout from "./ServicesInfoLayout";
 import { ProgressBarField, ProgressBar } from "@components/ProgressBarField";
-import { Card } from "@components/Card";
 import styles from "@scss/index.module.scss";
 
 const FrontEnd: React.FC = () => {
   return (
     <ServicesInfoLayout title="fron end">
-      <Card className={styles["serviceInfo__container"]}>
+      <div className={styles["serviceInfo__container"]}>
         <div className={styles["serviceInfo__description"]}>
           <p>
-            a set of random skills bars that I find theme cool in a lot of
-            porftfolios around the internet, they don't mean anything . I can't
-            even know how they calculate something like that
+            I start learning front end development 3 years ago, just before some
+            months I could call myself a real front end developer, it is not as
+            easy as I taught the first time I went through this world,but I
+            could reach my gool in the last, next to this there are some random
+            bars that they don't mean anything, but I find them cool around the
+            portfolio in the internet
           </p>
         </div>
         <div className={styles["servicInfo__progressBar"]}>
@@ -21,7 +23,7 @@ const FrontEnd: React.FC = () => {
             <ProgressBar name="js" color="none" />
           </ProgressBarField>
         </div>
-      </Card>
+      </div>
     </ServicesInfoLayout>
   );
 };

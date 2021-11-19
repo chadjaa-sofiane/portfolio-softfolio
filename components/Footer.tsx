@@ -6,19 +6,23 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footer__container}>
-        <div className={styles.footer__iconField}>
-          <FacebookIcon fontSize="large" style={{ color: "#4267B2" }} />
+    <footer className={styles["footer"]}>
+      <div className={styles["footer__socialMediaLinks"]}>
+        <div className={styles["footer__iconField"]}>
+          <FacebookIcon fontSize="large" />
+          <p className={styles["footer__iconField__name"]}>Facebook</p>
         </div>
-        <div className={styles.footer__iconField}>
-          <WhatsAppIcon fontSize="large" style={{ color: "#25D366" }} />
+        <div className={styles["footer__iconField"]}>
+          <WhatsAppIcon fontSize="large" />
+          <p className={styles["footer__iconField__name"]}>WhatsApp</p>
         </div>
-        <div className={styles.footer__iconField}>
-          <TelegramIcon fontSize="large" style={{ color: "#0088CC" }} />
+        <div className={styles["footer__iconField"]}>
+          <TelegramIcon fontSize="large" />
+          <p className={styles["footer__iconField__name"]}>Telegram</p>
         </div>
-        <div className={styles.footer__iconField}>
+        <div className={styles["footer__iconField"]}>
           <InstagramIcon fontSize="large" />
+          <p className={styles["footer__iconField__name"]}>Instagram</p>
         </div>
       </div>
     </footer>

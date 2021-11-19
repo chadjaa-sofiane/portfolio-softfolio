@@ -1,0 +1,140 @@
+[
+    {
+        "name": "React",
+        "field": "front-end",
+        "link": "https://reactjs.org/",
+        "Icon": "/svgs/tools/react.svg"
+    },
+    {
+        "name": "Vue",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/vue.svg"
+    },
+    {
+        "name": "Next",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/next-js.svg"
+    },
+    {
+        "name": "gatsby",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/gatsby.svg"
+    },
+    {
+        "name": "Redux",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/redux.svg"
+    },
+    {
+        "name": "Bootstrap",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/bootstrap.svg"
+    },
+    {
+        "name": "material-ui",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/material-ui.svg"
+    },
+    {
+        "name": "semantic-ui",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/semantic-ui.svg"
+    },
+    {
+        "name": "react-spring",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/react-spring.svg"
+    },
+    {
+        "name": "webpack",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/webpack.svg"
+    },
+    {
+        "name": "sass",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/sass.svg"
+    },
+    {
+        "name": "apollo",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/apollo.svg"
+    },
+    {
+        "name": "electron",
+        "field": "front-end",
+        "link": "",
+        "Icon": "/svgs/tools/electron.svg"
+    },
+    {
+        "name": "mongodb",
+        "field": "data-base",
+        "link": "",
+        "Icon": "/svgs/tools/mongodb.svg"
+    },
+    {
+        "name": "postgresql",
+        "field": "data-base",
+        "link": "",
+        "Icon": "/svgs/tools/postgresql.svg"
+    },
+    {
+        "name": "redis",
+        "field": "data-base",
+        "link": "",
+        "Icon": "/svgs/tools/redis.svg"
+    },
+    {
+        "name": "express",
+        "field": "back-end",
+        "link": "",
+        "Icon": "/svgs/tools/express.svg"
+    },
+    {
+        "name": "graphql",
+        "field": "back-end",
+        "link": "",
+        "Icon": "/svgs/tools/graphql.svg"
+    },
+    {
+        "name": "jwt",
+        "field": "back-end",
+        "link": "",
+        "Icon": "/svgs/tools/jwt.svg"
+    },
+    {
+        "name": "fastify",
+        "field": "back-end",
+        "link": "",
+        "Icon": "/svgs/tools/fastify.svg"
+    },
+    {
+        "name": "gulp",
+        "field": "back-end",
+        "link": "",
+        "Icon": "/svgs/tools/gulp.svg"
+    },
+    {
+        "name": "pug",
+        "field": "back-end",
+        "link": "",
+        "Icon": "/svgs/tools/pug.svg"
+    },
+    {
+        "name": "ejs",
+        "field": "back-end",
+        "link": "",
+        "Icon": "/svgs/tools/ejs.svg"
+    }
+]

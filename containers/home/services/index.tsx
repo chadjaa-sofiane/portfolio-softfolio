@@ -2,8 +2,8 @@ import { useState, createContext } from "react";
 import useObserver from "@lib/hooks/useObserver";
 import styles from "@scss/index.module.scss";
 import ServicesCards from "./ServicesCards";
+import { FrontEnd, BackEnd, Mobile } from "@components/services";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import FrontEnd from "@components/services/FrontEnd";
 
 interface IServicesContext {
   service?: string;
@@ -45,28 +45,13 @@ const Services = () => {
             <>
               {!service && <ServicesCards />}
               {service === "front-end" && <FrontEnd />}
-              {service === "back-end" && (
-                <ServiceCard setService={setService}> back end </ServiceCard>
-              )}
-              {service === "mobile" && (
-                <ServiceCard setService={setService}> mobile </ServiceCard>
-              )}
+              {service === "back-end" && <BackEnd />}
+              {service === "mobile" && <Mobile />}
             </>
           </CSSTransition>
         </SwitchTransition>
       </div>
     </ServicesContext.Provider>
-  );
-};
-
-const ServiceCard = (props) => {
-  return (
-    <div>
-      <button onClick={() => props.setService("")} className={styles["button"]}>
-        BACK
-      </button>
-      {props.children}
-    </div>
   );
 };
 

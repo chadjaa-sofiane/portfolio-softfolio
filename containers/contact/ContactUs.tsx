@@ -57,8 +57,8 @@ const ContactUs: React.FC = (props) => {
         }}
         onSubmit={submit}
       >
-        <Field name="name" label="name :" />
-        <Field name="email" label="prenom :" />
+        <Field name="name" label="full name :" />
+        <Field name="email" label="email :" />
         <Field name="subject" label="subject :" />
         <Field type="textArea" name="message" label="message :" rows={2} />
       </Form>

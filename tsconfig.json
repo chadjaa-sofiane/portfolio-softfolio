@@ -16,19 +16,36 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "downlevelIteration":true,
+    "downlevelIteration": true,
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@scss/*":["scss/*"],
-      "@components/*":["components/*"],
-      "@containers/*":["containers/*"],
-      "@store/*":["store/*"],
-      "@lib/*":["lib/*"],
-      "@models/*":["models/*"],
-      "@public/*":["public/*"],
-      "@util/*":["util/*"],
-    }
+      "@scss/*": [
+        "scss/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@containers/*": [
+        "containers/*"
+      ],
+      "@store/*": [
+        "store/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@util/*": [
+        "util/*"
+      ]
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",

@@ -12,41 +12,9 @@
   flex-direction: column;
   color: hsl(var(--text_color));
   margin-top: 4em;
+  backdrop-filter: blur(0.05em);
   @include breakpoint(medium) {
     padding: 0 1em;
-  }
-}
-
-.body {
-  width: 100%;
-  flex: 1;
-  backdrop-filter: blur(0.05em);
-  .title {
-    padding: 0.5em 0;
-    color: hsl(var(--primary_color));
-    width: 100%;
-    text-align: center;
-  }
-  .pecture {
-    &__wrapper {
-      display: flex;
-      justify-content: flex-end;
-      @include breakpoint(large) {
-        justify-content: center;
-      }
-    }
-    &__container {
-      position: relative;
-      border-radius: 50%;
-      overflow: hidden;
-      width: 30em;
-      max-width: 20em;
-      height: 20em;
-      img {
-        width: 100%;
-        object-fit: cover;
-      }
-    }
   }
 }
 

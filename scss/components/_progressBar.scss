@@ -10,19 +10,20 @@
   }
   &__container {
     width: 100%;
-    margin-top: 0.5em;
+    margin-top: 0.25em;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 1em 2em;
-    align-items: center;
   }
   &__title {
     color: hsl(var(--progress-bar-clr));
     font-size: var(--fs-500);
     font-weight: 550;
-    width: 3em;
   }
   &__background {
-    flex: 1;
+    width: 100%;
+    margin-top: 0.5em;
     height: 0.5em;
     border-radius: 0.1em;
     background-color: hsl(var(--progress-bar-clr) / 0.3);

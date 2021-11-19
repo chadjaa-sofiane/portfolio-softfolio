@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
   margin-top: 8em;
+  row-gap: 2em;
   &__text {
     flex: 1;
     span:nth-child(2) {
@@ -13,10 +14,33 @@
     .myJob {
       color: hsl(var(--secondary_color));
     }
-    .descriptionText {
-      margin-top: 1.5em;
-      text-align: justify;
-      font-size: 1.3rem;
+  }
+  &__text {
+    margin-top: 1.5em;
+    font-size: 1.3rem;
+  }
+}
+.buttonGroupe {
+  margin-top: 1em;
+}
+
+.pecture {
+  &__wrapper {
+    margin-left: auto;
+    @include breakpoint(large) {
+      margin: 0 auto;
+    }
+  }
+  &__container {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 30em;
+    max-width: 20em;
+    height: 20em;
+    img {
+      width: 100%;
+      object-fit: cover;
     }
   }
 }

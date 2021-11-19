@@ -1,0 +1,9 @@
+.cssExposition {
+  &__container {
+    margin: 2em 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: 2em;
+  }
+}

@@ -1,0 +1,16 @@
+.title {
+  background: red;
+  background: blue;
+}
+.shit {
+  background: hsl(var(--primary_color));
+  color: #fff;
+  padding: 1em;
+}
+
+.button {
+  background-color: green;
+}
+.button:hover {
+  background-color: pink;
+}
