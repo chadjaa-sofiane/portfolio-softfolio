@@ -20,18 +20,13 @@
     position: relative;
     margin-top: 1em;
     padding: 2em auto;
-    box-shadow: 0 0 5px 1px hsl(var(--secondary_color));
     box-shadow: 0 0 0.1em hsl(var(--primary_color));
+    transition: transform 100ms ease-in;
     &:hover {
-      background-color: hsl(var(--primary_color));
-      color: #fff;
+      transform: scale(1.01);
       .team__card__pecture {
-        background-color: red;
-        outline: 0.2em solid #fff;
+        outline: 0.2em solid hsl(var(--primary_color));
         transform: scale(1.03);
-      }
-      .team__card__name {
-        color: #fff;
       }
     }
     &__pecture {
@@ -43,7 +38,7 @@
       overflow: hidden;
       margin: 0 auto;
       outline: 0.01em solid transparent;
-      transition: outline 100ms ease-in, transform 100ms ease-in;
+      transition: outline 50ms ease-in, transform 50ms ease-in;
       img {
         width: 100%;
         object-fit: cover;

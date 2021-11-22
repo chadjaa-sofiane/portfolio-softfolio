@@ -1,5 +1,7 @@
 import Head from "next/head";
 import cssExpositionInfo from "@public/css_exposition/css_exposition_info.json";
+import styles from "@scss/index.module.scss";
+import React from "react";
 
 const CssExposition = (props) => {
   return (
@@ -44,5 +46,7 @@ export const getStaticProps = async ({ params }) => {
     },
   };
 };
+
+CssExposition.pageLayout = (page) => page;
 
 export default CssExposition;

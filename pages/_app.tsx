@@ -1,3 +1,4 @@
+import type { NextPage } from "next";
 import { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import styles from "@scss/index.module.scss";
@@ -7,16 +8,29 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import "@scss/index.scss";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+type NextPageWithLayout = NextPage & {
+  pageLayout?: (page: React.ReactElement) => React.ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+const appLayout = (page) => {
   return (
-    <Provider store={store}>
+    <>
       <Header />
       <Background />
-      <div className={styles.container}>
-        <Component {...pageProps} />
-      </div>
+      <div className={styles.container}>{page}</div>
       <Footer />
-    </Provider>
+    </>
+  );
+};
+
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.pageLayout ?? appLayout;
+  return (
+    <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>
   );
 };
 

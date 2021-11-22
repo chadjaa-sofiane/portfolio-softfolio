@@ -1,13 +1,10 @@
 import Head from "next/head";
-
-import styles from "@scss/index.module.scss";
 import Introduction from "@containers/home/introduction";
 import Services from "@containers/home/services";
 import MyTools from "@containers/home/myTools";
 import MyTeam from "@containers/home/myTeam";
-import tools from "public/json/tools.json";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Head>
@@ -21,4 +18,6 @@ export default function Home() {
       <MyTeam />
     </>
   );
-}
+};
+
+export default Home;
