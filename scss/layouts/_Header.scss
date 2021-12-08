@@ -4,28 +4,43 @@ $hover_color: hsl(var(--primary_color));
 .header {
   position: fixed;
   top: 0;
-  left:0;
+  left: 0;
   z-index: 1;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   padding: 1em 4em;
   color: $text_color;
   background-color: hsl(var(--header_color));
   isolation: isolate;
+  border-bottom: 0 solid hsl(var(--primary_color) / 0.5);
+  transition: border-bottom 100ms ease-in;
   span {
     color: $hover_color;
   }
-  nav {
+  &__nav {
     @include flex(flex-end, false, false);
     flex: 1;
     @include breakpoint(medium) {
-      display: false;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100vw;
+      height: 100vh;
+      transition: left 300ms ease-in, background-color 300ms ease-in;
     }
     ul {
       display: flex;
       cursor: pointer;
       transition: width 2000ms;
       font-size: 1.1rem;
+      @include breakpoint(medium) {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+      }
       li {
         position: relative;
         margin-left: 1em;
@@ -48,6 +63,15 @@ $hover_color: hsl(var(--primary_color));
           left: 0;
           width: 100%;
         }
+        @include breakpoint(medium) {
+          width: 100%;
+          padding: 2em 0;
+          margin-left: 0;
+          font-weight: bold;
+          &::after {
+            display: none;
+          }
+        }
       }
     }
     .active {
@@ -56,7 +80,19 @@ $hover_color: hsl(var(--primary_color));
         font-weight: 700;
         background-color: $hover_color;
       }
+      @include breakpoint(medium) {
+        color: hsl(var(--primary_color));
+      }
     }
+  }
+  &--second {
+    border-bottom: 0.2em solid hsl(var(--primary_color) / 0.5);
+  }
+  &__observation__helper {
+    position: absolute;
+    top: 5em;
+    width: 100%;
+    height: 1em;
   }
 }
 
@@ -85,5 +121,31 @@ $hover_color: hsl(var(--primary_color));
     transform: rotate(25deg);
     border: 2px solid $hover_color;
     z-index: -1;
+  }
+}
+
+.menu_bar {
+  &:checked + nav {
+    left: 0;
+    background: #fff;
+    z-index: 1;
+  }
+  &__btn {
+    cursor: pointer;
+    color: hsl(var(--primary_color));
+    transition: 100ms transform ease-in;
+    &:hover {
+      transform: scale(1.2);
+    }
+    &--open {
+      @include breakpoint-up(medium) {
+        display: none;
+      }
+    }
+    &--close {
+      @include breakpoint-up(medium) {
+        display: none;
+      }
+    }
   }
 }

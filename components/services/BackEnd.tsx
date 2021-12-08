@@ -19,12 +19,12 @@ const BackEnd: React.FC = () => {
         </div>
         <div className={styles["servicInfo__progressBar"]}>
           <ProgressBarField
-            defaultValue={{ express: 100, mongodb: 50, redis: 40 }}
+            defaultValue={{ express: 100, mongodb: 50, redis: 40, nest: 20 }}
           >
-            <ProgressBar name="express" />
             <ProgressBar name="mongodb" />
+            <ProgressBar name="express" />
             <ProgressBar name="redis" />
-            <ProgressBar name="" />
+            <ProgressBar name="nest" />
           </ProgressBarField>
         </div>
       </div>

@@ -9,7 +9,6 @@ class Form extends Component<IFormProps, IFormState> {
     this.state = {
       values: {},
       errors: {},
-      submited: false,
       submitting: false,
     };
   }
@@ -51,15 +50,24 @@ class Form extends Component<IFormProps, IFormState> {
     return !haveErrors;
   };
 
+  private clear = () => {
+    this.setState({
+      values: {},
+      errors: {},
+      submitting: false,
+    });
+  };
+
   private handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!this.props.onSubmit) return;
     if (this.ValidateForm()) {
       this.setState({ submitting: true });
-      const result = await this.props.onSubmit(this.state.values);
+      const result = await this.props.onSubmit(this.state.values, () =>
+        this.clear()
+      );
       this.setState({
-        errors: result.errors,
-        submited: result.success,
+        errors: result.errors || {},
         submitting: false,
       });
     }
@@ -75,12 +83,12 @@ class Form extends Component<IFormProps, IFormState> {
           validate: this.validate,
         }}
       >
-        <form className={styles.form} onSubmit={this.handleSubmit}>
+        <form className={styles["form"]} onSubmit={this.handleSubmit}>
           {this.props.children}
-          <div className={styles.form__buttons__field}>
+          <div className={styles["form__buttons__field"]}>
             <button
-              className={`${styles.button}`}
-              disabled={this.state.submited || this.state.submitting}
+              className={`${styles["button"]}`}
+              disabled={this.state.submitting}
             >
               Submit
             </button>

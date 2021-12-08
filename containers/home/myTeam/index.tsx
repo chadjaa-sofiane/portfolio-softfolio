@@ -1,8 +1,11 @@
-import { Card } from "@components/Card";
+import { Card, CardBack } from "@components/Card";
 import Image from "next/image";
 import teamInfo from "public/json/team.json";
 import styles from "@scss/index.module.scss";
 import useObserver from "@lib/hooks/useObserver";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GithupIcon from "@material-ui/icons/GitHub";
+import TelegramIcon from "@material-ui/icons/Telegram";
 
 const MyTeam = () => {
   const [teamCompoenentRef, teamComponentApear] = useObserver<HTMLDivElement>({
@@ -20,16 +23,66 @@ const MyTeam = () => {
       <h1 className={styles["title"]}> MY TEAM </h1>
       <div className={styles["team__container"]}>
         {teamInfo?.map((f, index) => (
-          <Card key={index} className={styles["team__card"]}>
-            {/* <h3 className={styles.myTeam__card__name}> {f.name}</h3> */}
-            <div className={styles["team__card__pecture"]}>
-              <Image src={f.image} width="400" height="400" />
+          <Card key={index}>
+            <div className={styles["team__card"]}>
+              <div className={styles["team__card__pecture"]}>
+                <Image
+                  src={f.image}
+                  width="400"
+                  height="400"
+                />
+              </div>
+              <h3 className={styles["team__card__name"]}>{f.name}</h3>
             </div>
-            <h3 className={styles["team__card__name"]}>{f.name}</h3>
+            <CardBack>
+              <div className={styles["team__card__socialMedia__container"]}>
+                {f.socialMedia.linkedIn && (
+                  <LinkedIn link={f.socialMedia.linkedIn} />
+                )}
+                {f.socialMedia.githup && <Githup link={f.socialMedia.githup} />}
+                {f.socialMedia.telegram && (
+                  <Telegram link={f.socialMedia.telegram} />
+                )}
+              </div>
+            </CardBack>
           </Card>
         ))}
       </div>
     </div>
+  );
+};
+
+const SocialMediaLayout: React.FC<{ link?: string }> = (props) => {
+  return (
+    <div className={styles["team__card__socialMedia__field"]}>
+      <a href={props.link} target="_blank">
+        {props.children}
+      </a>
+    </div>
+  );
+};
+
+const LinkedIn: React.FC<{ link?: string }> = (props) => {
+  return (
+    <SocialMediaLayout link={props.link || ""}>
+      <LinkedInIcon fontSize="large" />
+    </SocialMediaLayout>
+  );
+};
+
+const Githup: React.FC<{ link?: string }> = (props) => {
+  return (
+    <SocialMediaLayout link={props.link || ""}>
+      <GithupIcon fontSize="large" />
+    </SocialMediaLayout>
+  );
+};
+
+const Telegram: React.FC<{ link?: string }> = (props) => {
+  return (
+    <SocialMediaLayout link={props.link || ""}>
+      <TelegramIcon fontSize="large" />
+    </SocialMediaLayout>
   );
 };
 

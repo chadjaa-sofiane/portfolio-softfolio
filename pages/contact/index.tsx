@@ -1,12 +1,11 @@
-import styles from "@scss/index.module.scss";
 import ContactUs from "@containers/contact/ContactUs";
 
-function Contact(): JSX.Element {
+const Contact = () => {
   return (
-    <div className={styles.contact__container}>
+    <>
       <ContactUs />
-    </div>
+    </>
   );
-}
+};
 
 export default Contact;

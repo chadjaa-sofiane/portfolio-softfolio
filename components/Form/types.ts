@@ -21,7 +21,10 @@ export interface ISubmitResult {
   errors?: Errors;
 }
 
-export type OnSubmit = (values: Values) => Promise<ISubmitResult>;
+export type OnSubmit = (
+  values: Values,
+  clear?: () => void
+) => Promise<ISubmitResult>;
 
 export interface IFormProps {
   defaultValues: Values;
@@ -32,7 +35,6 @@ export interface IFormProps {
 export interface IFormState {
   values: Values;
   errors: Errors;
-  submited: boolean;
   submitting: boolean;
 }
 

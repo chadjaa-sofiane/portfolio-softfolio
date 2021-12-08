@@ -18,8 +18,8 @@ const FrontEnd: React.FC = () => {
         </div>
         <div className={styles["servicInfo__progressBar"]}>
           <ProgressBarField defaultValue={{ html: 50, css: 40, js: 80 }}>
-            <ProgressBar name="html" />
-            <ProgressBar name="css" />
+            <ProgressBar name="html" color="primary" />
+            <ProgressBar name="css" color="primary" />
             <ProgressBar name="js" color="none" />
           </ProgressBarField>
         </div>

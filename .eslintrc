@@ -2,6 +2,7 @@
   "extends": [
     "next",
     "next/core-web-vitals",
+    "eslint-config-next",
     "eslint-recommended",
     "eslint-react",
     "eslint-config-prettier"

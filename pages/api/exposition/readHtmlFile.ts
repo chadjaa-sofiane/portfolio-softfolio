@@ -18,7 +18,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
         encoding: "utf-8",
       }
     );
-    if (!html) return res.status(404).json({ error: "there is no html" });
+    if (html == null || html == undefined || html == "") return res.status(404).json({ error: "there is no html" });
     res.json({ html });
   } catch (e) {
     res.status(404).json(e.message);

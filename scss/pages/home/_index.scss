@@ -4,7 +4,8 @@
 @import "./team";
 
 .container {
-  max-width: 1430px;
+  width: 1440px;
+  max-width: 100%;
   margin: auto;
   min-height: 100vh;
   padding: 0 4em;
@@ -12,7 +13,7 @@
   flex-direction: column;
   color: hsl(var(--text_color));
   margin-top: 4em;
-  backdrop-filter: blur(0.05em);
+  background-color: hsl(var(--background_color) / 0.4);
   @include breakpoint(medium) {
     padding: 0 1em;
   }

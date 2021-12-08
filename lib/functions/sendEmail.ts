@@ -1,39 +1,34 @@
-import ReactDOMServer from "react-dom/server";
 import nodemailer from "nodemailer";
 
-// I think I don't have to change "from" every time , so I will make it static
-
 interface ISendEmailI {
-  body: JSX.Element;
+  body: string;
   subject: string;
   text: string;
-  from: string;
+  html: string;
   to: string;
 }
 
 const sendEmail = async ({ body, ...restEmailAttr }: ISendEmailI) => {
-  // const html = ReactDOMServer.renderToString(body);  
-  /* let testAccount = await nodemailer.createTestAccount();
+  let testAccount = await nodemailer.createTestAccount();
 
   let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false,
+    host: "smtp.titan.email",
+    port: 465,
+    secure: true,
     auth: {
-      user: process.env.USER || testAccount.user,
-      pass: process.env.PASS || testAccount.pass,
+      user: process.env.EMAIL_USER || testAccount.user,
+      pass: process.env.EMAIL_PASS || testAccount.pass,
     },
   });
 
-  //  I wrapped the sendMail inside a trycatch , change it if you think is there a better method to display the errors
   try {
     await transporter.sendMail({
       ...restEmailAttr,
-      html,
+      from: "sotffolio softfolio@chadjaasoftfolio.com",
     });
   } catch (e) {
     console.error(e);
-  } */
+  }
 };
 
 export default sendEmail;

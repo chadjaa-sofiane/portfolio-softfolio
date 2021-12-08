@@ -7,7 +7,7 @@ const Field: React.FC<IFieldProps> = (props) => {
   const { name, type = "text", options = [], rows = 1 } = props;
 
   const context = useContext(FormContext);
-
+  
   const error = context?.errors[name]?.length > 0;
 
   const handleChange = (e: React.ChangeEvent<FieldInputType>) => {

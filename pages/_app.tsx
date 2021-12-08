@@ -6,6 +6,8 @@ import store from "@store/index";
 import Background from "@components/background";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import BackToTop from "@components/BackToTop";
+import ContextProvider from "@containers/_app/ContextProvider"
 import "@scss/index.scss";
 
 type NextPageWithLayout = NextPage & {
@@ -21,16 +23,21 @@ const appLayout = (page) => {
     <>
       <Header />
       <Background />
+      <BackToTop />
       <div className={styles.container}>{page}</div>
       <Footer />
     </>
   );
 };
 
-const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+const MyApp = ({ Component, pageProps, router }: AppPropsWithLayout) => {
   const getLayout = Component.pageLayout ?? appLayout;
   return (
-    <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>
+    <Provider store={store}>
+      <ContextProvider>
+        {getLayout(<Component {...pageProps} />)}
+      </ContextProvider>
+    </Provider>
   );
 };
 

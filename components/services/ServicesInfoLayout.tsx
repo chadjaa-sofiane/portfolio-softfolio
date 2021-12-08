@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ServicesContext } from "@containers/home/services";
-import BackArrow from "@material-ui/icons/ArrowBack";
+import BackArrow from "@material-ui/icons//ArrowBack";
 import { Card } from "@components/Card";
 import styles from "@scss/index.module.scss";
 

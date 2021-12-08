@@ -1,0 +1,40 @@
+@use "../abstracts/" as *;
+
+.alert {
+  &.success {
+    --alert-color: var(--primary_color);
+  }
+  &.error {
+    --alert-color: var(--secondary_color);
+  }
+  position: fixed;
+  left: 50%;
+  bottom: 1em;
+  padding: 0.5em 1em;
+  text-align: center;
+  min-width: 20em;
+  font-family: $font-btn;
+  transform: translateX(-50%) translateY(200%);
+  background-color: hsl(var(--alert-color) / 0.8);
+  box-shadow: 0 0 0.1em hsl(var(--alert-color));
+  border-radius: 0.5em;
+  color: #FFF;
+  font-weight: 500;
+  font-size: var(--fs-500);
+  transition: 200ms transform ease-in;
+  z-index: 1;
+  overflow: hidden;
+  &--open {
+    transform: translateX(-50%) translateY(0);
+    animation: bottomSide 400ms ease-in;
+  }
+}
+
+@keyframes bottomSide {
+  from {
+    transform: translateX(-50%) translateY(200%);
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}

@@ -1,13 +1,27 @@
 module.exports = {
   reactStrictMode: true,
-  swcMinify: false,
+  swcMinify: true,
   images: {
-    domains: [],
+    loader: "akamai",
+    path: "",
   },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            svgConfig: {
+              plugins: [
+                {
+                  cleanupIDs: false,
+                },
+              ],
+            },
+          },
+        },
+      ],
     });
 
     return config;

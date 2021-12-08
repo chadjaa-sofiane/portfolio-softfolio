@@ -17,6 +17,7 @@ body {
   background-color: hsl(var(--background_color));
   scroll-snap-type: y mandatory;
   isolation: isolate;
+  scroll-behavior: smooth;
 }
 
 ul {

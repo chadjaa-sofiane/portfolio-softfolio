@@ -13,8 +13,8 @@ const ServiceCard: React.FC<IServiceCardProps> = (props) => {
   const context = useContext(ServicesContext);
   return (
     <Card
-      onClick={() => context.setService(props.name)}
       className={styles["services__card"]}
+      onClick={() => context.setService(props.name)}
     >
       <div className={styles["services__card__iconField"]}>{props.Icon}</div>
       <h2 className={styles["services__card__title"]}>{props.title}</h2>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HomeBackground from "@public/svgs/home.svg";
 import styles from "@scss/index.module.scss";
 
 const Introduction = () => {
@@ -7,11 +8,11 @@ const Introduction = () => {
       <div className={styles["description__text"]}>
         <h1>
           My name is
-          <span className={styles["myName"]}> chadjaa sofiane </span>
+          <span className={styles["primary"]}> chadjaa sofiane </span>
         </h1>
         <h2>
-          I'am a <span className={styles["myJob"]}> full-stack </span>
-          developer
+          I'am a <span className={styles["secondary"]}> full-stack </span>
+          developer.
         </h2>
         <p className={styles["description__text"]}>
           Welcome in my portfolio, here where I can display all my services and
@@ -25,11 +26,9 @@ const Introduction = () => {
           <button className={styles["button"]}>my skils</button>
         </div>
       </div>
-      <div className={styles.pecture__wrapper}>
-        <div className={styles.pecture__container}>
-          <Image src="/images/zepli.jpg" layout="fill" className={styles[""]} />
-          sof
-        </div>
+      <div className={styles["illustrator__container"]}>
+        {/* <Image src="/images/home.png" layout="fill" /> */}
+        <HomeBackground />
       </div>
     </div>
   );

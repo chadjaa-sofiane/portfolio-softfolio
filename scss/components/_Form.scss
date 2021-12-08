@@ -5,25 +5,24 @@
   padding: 1rem 2rem;
   &__field {
     width: 100%;
-    padding: 0.5em;
     display: flex;
     flex-direction: column;
+    margin-top: 0.5em;
   }
   &__label {
-    color: hsl(var(--primary_color));
-    font-size: 1.5rem;
+    font-size: var(--fs-500);
     font-weight: 600;
   }
   &__input {
     all: unset;
     margin-top: 0.25em;
-    font-size: 1.4rem;
+    font-size: var(--fs-400);
     padding: 0.25em 0.5em;
     font-weight: 550;
     box-shadow: 0 0 0.1em hsl(var(--primary_color));
     &--error {
       //   outline: 0.1em solid hsl(var(--error_color));
-      box-shadow: 0 0 0.1em .05em hsl(var(--error_color));
+      box-shadow: 0 0 0.1em 0.05em hsl(var(--error_color));
     }
   }
   &__errors__container {
@@ -31,16 +30,19 @@
     flex-direction: column;
   }
   &__error {
-    margin-top: 0.5em;
+    margin-top: 0.25em;
     color: red;
-    font-size: 1.3rem;
+    font-size: var(--fs-400);
     font-weight: 600;
     // color: hsm(var(--error_color));
   }
   &__buttons__field {
     width: 100%;
-    margin-top: 2em;
     display: flex;
-    justify-content: flex-end;
+    margin-top: 0.5em;
+    button {
+      text-align: center;
+      flex: 1;
+    }
   }
 }

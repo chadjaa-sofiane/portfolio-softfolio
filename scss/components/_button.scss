@@ -35,4 +35,8 @@
   &:disabled {
     background-color: hsl(var(--effect-clr) / 0.5);
   }
+  &:disabled,&:focus{
+    outline: unset;
+    color: inherit;
+  }
 }

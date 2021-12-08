@@ -16,8 +16,6 @@ interface ITools {
 const initialState: ITools[] = toolsInfo;
 
 const MyTools = () => {
-  console.log(initialState);
-
   const [active, setActive] = useState<ActiveValue>(0);
 
   const [tools, setTools] = useState(initialState);

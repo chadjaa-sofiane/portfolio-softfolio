@@ -1,17 +1,20 @@
 .description {
   display: grid;
+  min-height: 25em;
   grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-  margin-top: 8em;
+  margin: 1em 0;
   row-gap: 2em;
+  padding: 2em 1em;
+  background-color: hsl(var(--background_color) / 0.6);
   &__text {
     flex: 1;
     span:nth-child(2) {
       color: hsl(var(--secondary_color));
     }
-    .myName {
+    .primary {
       color: hsl(var(--primary_color));
     }
-    .myJob {
+    .secondary {
       color: hsl(var(--secondary_color));
     }
   }
@@ -24,23 +27,11 @@
   margin-top: 1em;
 }
 
-.pecture {
-  &__wrapper {
-    margin-left: auto;
-    @include breakpoint(large) {
-      margin: 0 auto;
-    }
-  }
+.illustrator{
   &__container {
+    width: 100%;
     position: relative;
-    border-radius: 50%;
     overflow: hidden;
-    width: 30em;
-    max-width: 20em;
-    height: 20em;
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
+    text-align: center;
   }
 }

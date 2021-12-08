@@ -1,31 +1,47 @@
-import Image from "next/image";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import styles from "@scss/index.module.scss";
-import { Menu, MenuItem } from "@components/Menu";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 interface cardProps {
-  src?: string;
   className?: string;
   onClick?: React.MouseEventHandler;
 }
 
+interface ICardContext {
+  backContent?: React.ReactNode;
+  setbackContent?: (element: React.ReactNode) => void;
+}
 
-export const Card: React.FC<cardProps> = ({
-  children,
-  src,
-  className = "",
-  onClick,
-}) => {
+const CardContext = createContext<ICardContext>({});
+
+export const Card: React.FC<cardProps> = ({ children, className, onClick }) => {
+  const [backContent, setbackContent] = useState(null);
   return (
-    <div className={`${styles.card} ${className}`} onClick={onClick}>
-      {src && (
-        <div className={styles.card__pecture}>
-          <Image src={src} layout="fill" />
+    <CardContext.Provider value={{ backContent, setbackContent }}>
+      <div
+        className={`${styles["card"]} ${
+          backContent ? styles["card__flip"] : ""
+        }`}
+        onClick={onClick}
+        tabIndex={1}
+      >
+        {backContent && (
+          <div className={styles["card__back"]}>{backContent}</div>
+        )}
+        <div className={`${styles["card__front"]} ${className || ""}`}>
+          {children}
         </div>
-      )}
-      {children}
-    </div>
+      </div>
+    </CardContext.Provider>
   );
 };
 
+export const CardBack: React.FC = (props) => {
+  const context = useContext(CardContext);
+  useEffect(() => {
+    if (context.setbackContent) {
+      context.setbackContent(props.children);
+    }
+  }, []);
 
+  return null;
+};
