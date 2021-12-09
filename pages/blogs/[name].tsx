@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import fs from "fs";
 import { join } from "path";
 import { useEffect } from "react";
-import Head from "next/head";
 import matter from "gray-matter";
 import { IBlog } from "@containers/blogs/types";
 import hljs from "highlight.js";
