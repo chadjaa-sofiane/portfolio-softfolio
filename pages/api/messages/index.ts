@@ -21,7 +21,7 @@ const sendEmailToGuest = (to: string, name: string) => {
   });
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const getMessage = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { method, body } = req;
     switch (method) {
@@ -43,3 +43,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(400).json(e);
   }
 };
+
+export default getMessage

@@ -52,7 +52,7 @@ const Blog: React.FC<IProps> = ({ blog }) => {
           </div>
           <div className={styles["blog__publicher"]}>
             <div className={styles["blog__publicher__imageField"]}>
-              <img src="/images/zepli.jpg" />
+              <img src="/images/zepli.jpg" alt="profile" />
             </div>
             <p> chadjaa sofiane </p>
           </div>

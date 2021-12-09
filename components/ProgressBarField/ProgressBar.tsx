@@ -11,7 +11,7 @@ const ProgressBar: React.FC<IProgressBarProps> = (props) => {
     if (value > 100) value = 100;
     if (value < 0) value = 0;
     return value;
-  }, [context.values]);
+  }, [context.values, props.name]);
 
   const color = useMemo(() => {
     if (props.color) return props.color;

@@ -9,7 +9,7 @@ const Alert = () => {
     setTimeout(() => {
       closeAlert();
     }, 4000);
-  }, [alertMessage.message]);
+  }, [alertMessage.message, closeAlert]);
 
   return (
     <div
