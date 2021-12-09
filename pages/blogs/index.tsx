@@ -1,3 +1,4 @@
+import Head from "next/head";
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
@@ -17,10 +18,12 @@ const Blogs: React.FC<IProps> = ({ blogs }) => {
     options: { threshold: 0.4 },
     disconnect: true,
   });
-  console.log(isAppear , styles["blogs--appear"]);
 
   return (
     <>
+      <Head>
+        <title> blogs </title>
+      </Head>
       <div className={styles["description"]}>
         <div className={styles["description__text"]}>
           <h1>

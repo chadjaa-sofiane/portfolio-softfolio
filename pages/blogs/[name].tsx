@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import fs from "fs";
 import { join } from "path";
@@ -26,6 +27,7 @@ const Blog: React.FC<IProps> = ({ blog }) => {
   return (
     <>
       <Head>
+        <title> {blog.frontMatter.title} </title>
         <meta name="description" content={blog.frontMatter.excerpt} />
       </Head>
       <div className={styles["blog"]}>
