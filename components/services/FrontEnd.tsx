@@ -12,7 +12,7 @@ const FrontEnd: React.FC = () => {
             months I could call myself a real front end developer, it is not as
             easy as I taught the first time I went through this world,but I
             could reach my gool in the last, next to this there are some random
-            bars that they don't mean anything, but I find them cool around the
+            bars that they don&apos;t mean anything, but I find them cool around the
             portfolio in the internet
           </p>
         </div>

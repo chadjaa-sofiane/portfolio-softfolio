@@ -11,7 +11,7 @@ const BackEnd: React.FC = () => {
             I started learning back-end with PHP, I had different imaginations
             about web in that time, but that is changed after meeting node js.
             PHP still a great programing language and has great frameworks, but
-            I didn't knew that earlier, maybe I don't have the same knowledge in
+            I didn&apos;t knew that earlier, maybe I don&apos;t have the same knowledge in
             back-end as I know in front , but I learned what I need, and when
             will come to the real world project I it will start showing my
             skills, as before some random bars.

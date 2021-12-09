@@ -14,7 +14,7 @@ const Mobile: React.FC = () => {
           </p>
           <br />
           <p>
-            we have empty bar this time, I realy can't call about mySelf a
+            we have empty bar this time, I realy can&apos;t call about mySelf a
             mobile developement yet.
           </p>
         </div>
