@@ -1,7 +1,7 @@
-@import "./description";
-@import "./services";
-@import "./tools";
-@import "./team";
+@import "description";
+@import "services";
+@import "tools";
+@import "team";
 
 .container {
   width: 1440px;
@@ -26,4 +26,10 @@
     width: 100%;
     transition: width 1000ms;
   }
+}
+
+.title{
+  margin: 0.5em 0;
+  text-align: center;
+  color: hsl(var(--primary_color));
 }

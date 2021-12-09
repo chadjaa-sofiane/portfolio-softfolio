@@ -26,11 +26,7 @@ const MyTeam = () => {
           <Card key={index}>
             <div className={styles["team__card"]}>
               <div className={styles["team__card__pecture"]}>
-                <Image
-                  src={f.image}
-                  width="400"
-                  height="400"
-                />
+                <Image src={f.image} width="400" height="400" alt={f.name} />
               </div>
               <h3 className={styles["team__card__name"]}>{f.name}</h3>
             </div>
@@ -55,7 +51,7 @@ const MyTeam = () => {
 const SocialMediaLayout: React.FC<{ link?: string }> = (props) => {
   return (
     <div className={styles["team__card__socialMedia__field"]}>
-      <a href={props.link} target="_blank">
+      <a href={props.link} target="_blank" rel="noreferrer">
         {props.children}
       </a>
     </div>
