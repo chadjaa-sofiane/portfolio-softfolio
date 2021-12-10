@@ -30,8 +30,8 @@ const getMessage = async (req: NextApiRequest, res: NextApiResponse) => {
         res.status(200).json(messages);
         break;
       case "POST":
-        // const newMessage = new Message(body);
-        // const result = await newMessage.save();
+        const newMessage = new Message(body);
+        const result = await newMessage.save();
         sendEmailToGuest(body.email, body.name);
         res.status(200).json({ message: "send message successfuly" });
         break;
@@ -40,8 +40,10 @@ const getMessage = async (req: NextApiRequest, res: NextApiResponse) => {
         break;
     }
   } catch (e) {
+    console.log(e);
+
     return res.status(400).json(e);
   }
 };
 
-export default getMessage
+export default getMessage;

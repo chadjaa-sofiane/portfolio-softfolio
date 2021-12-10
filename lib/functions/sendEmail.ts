@@ -21,14 +21,23 @@ const sendEmail = async ({ body, ...restEmailAttr }: ISendEmailI) => {
     },
   });
 
-  try {
-    await transporter.sendMail({
-      ...restEmailAttr,
-      from: "sotffolio softfolio@chadjaasoftfolio.com",
+  const mailData = {
+    ...restEmailAttr,
+    from: "sotffolio softfolio@chadjaasoftfolio.com",
+  };
+
+  await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData, (err, info) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        console.log(info);
+        resolve(info);
+      }
     });
-  } catch (e) {
-    console.error(e);
-  }
+  });
 };
 
 export default sendEmail;
