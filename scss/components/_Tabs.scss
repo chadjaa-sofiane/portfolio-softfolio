@@ -1,6 +1,6 @@
 @use "/scss/abstracts/index" as *;
 
-.Tabs {
+.tabs {
   width: 100%;
   display: flex;
   border-bottom: 1px solid hsl(var(--primary_color));
@@ -9,7 +9,7 @@
   &::-webkit-scrollbar {
     display: none;
   }
-  &__Tab {
+  &__tab {
     position: relative;
     font-weight: 600;
     text-align: center;

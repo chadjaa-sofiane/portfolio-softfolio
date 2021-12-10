@@ -49,7 +49,7 @@ class Tabs extends Component<ITabsProps> {
           onChange: this.props.onChange,
         }}
       >
-        <div className={styles.Tabs} onChange={this.handleChange}>
+        <div className={styles["tabs"]} onChange={this.handleChange}>
           {this.props.children}
         </div>
       </TabsContext.Provider>
@@ -57,34 +57,6 @@ class Tabs extends Component<ITabsProps> {
   }
 }
 
-// export const Tabs = ({ children, value = 0, onChange = () => {} }) => {
-//   const [name, setName] = useState("");
-//   if (children) {
-//     if (Array.isArray(children)) {
-//       children = children.filter((e) => e.type.name === "Tab");
-//       children = children.map((e, index) => ({
-//         ...e,
-//         props: {
-//           ...e["props"],
-//           name,
-//           id: `${name}-id-${index}`,
-//           active: e.props.value === value,
-//         },
-//       }));
-//     } else {
-//       if (children.type.name !== "Tab") return children;
-//       children.props = { ...children["props"], name };
-//     }
-//   }
-//   useEffect(() => {
-//     setName(_uniqueName());
-//   }, []);
-//   return (
-//     <div className={styles.Tabs} onChange={onChange}>
-//       {children}
-//     </div>
-//   );
-// };
 
 export const Tab: FC<ITabProps> = (props) => {
   const id = useRef<string>("");
@@ -109,7 +81,7 @@ export const Tab: FC<ITabProps> = (props) => {
         id={id.current}
         hidden={true}
       />
-      <label htmlFor={id.current} className={styles.Tabs__Tab}>
+      <label htmlFor={id.current} className={styles["tabs__tab"]}>
         {props.children}
       </label>
     </>
