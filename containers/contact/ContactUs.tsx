@@ -37,6 +37,7 @@ const ContactUs: React.FC = (props) => {
         success: true,
       };
     } catch (e) {
+      console.log(e);
       return {
         success: false,
       };
