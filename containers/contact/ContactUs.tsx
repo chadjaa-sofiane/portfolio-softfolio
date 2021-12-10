@@ -21,7 +21,7 @@ const ContactUs: React.FC = (props) => {
   const Alert = useAlert();
   const submit: OnSubmit = async (values, clear) => {
     try {
-      const result = await fetch("http://localhost:3000/api/messages", {
+      const result = await fetch("/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,16 +47,25 @@ const ContactUs: React.FC = (props) => {
       <div className={styles["contactUs__desc"]}>
         <h2 className={styles["contactUs__title"]}> Contact me </h2>
         <div className={styles["contactUs__desc__imageField"]}>
-          <Image src="/images/inbox.png" height="200" width="200" />
+          <Image
+            src="/images/inbox.png"
+            height="200"
+            width="200"
+            alt="description"
+          />
         </div>
         <div className={styles["contactUs__desc__info"]}>
           <p className={styles["contactUs__desc__text"]}>
             want to start building your world. contact me.
-            <br /> let's build it together.
+            <br /> let&apos;s build it together.
           </p>
           <p className={styles["contactUs__desc__email"]}>
             email :
-            <a href="mailto:softfolio@chadjaasoftfolio.com" target="_blank">
+            <a
+              href="mailto:softfolio@chadjaasoftfolio.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               softfolio@chadjaasoftfolio.com
             </a>
           </p>
