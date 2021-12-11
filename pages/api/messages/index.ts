@@ -9,7 +9,7 @@ dbConnect();
 
 const sendEmailToGuest = async (to: string, name: string) => {
   const html = fs
-    .readFileSync(resolve("public", "/emails/welcome.html"), "utf-8")
+    .readFileSync(resolve("./public", "/emails/welcome.html"), "utf-8")
     .replace("<!-- geust  -->", name);
 
   await sendEmail({
