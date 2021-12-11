@@ -30,9 +30,9 @@ const getMessage = async (req: NextApiRequest, res: NextApiResponse) => {
         res.status(200).json(messages);
         break;
       case "POST":
-        const newMessage = new Message(body);
-        const result = await newMessage.save();
-        sendEmailToGuest(body.email, body.name);
+        // const newMessage = new Message(body);
+        // const result = await newMessage.save();
+        await sendEmailToGuest(body.email, body.name);
         res.status(200).json({ message: "send message successfuly" });
         break;
       default:
