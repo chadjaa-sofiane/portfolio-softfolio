@@ -2,14 +2,13 @@ import sendEmail from "@lib/functions/sendEmail";
 import Message from "@models/message.model";
 import dbConnect from "@util/dbConnect";
 import fs from "fs";
-import { resolve } from "path";
+import { join } from "path";
 import { NextApiRequest, NextApiResponse } from "next";
-
 dbConnect();
 
 const sendEmailToGuest = async (to: string, name: string) => {
   const html = fs
-    .readFileSync(resolve("./public", "/emails/welcome.html"), "utf-8")
+    .readFileSync(join("public", "/emails/welcome.html"), "utf-8")
     .replace("<!-- geust  -->", name);
 
   await sendEmail({
