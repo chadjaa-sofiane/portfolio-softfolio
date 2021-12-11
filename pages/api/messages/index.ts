@@ -8,8 +8,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 dbConnect();
 
 const sendEmailToGuest = async (to: string, name: string) => {
-  const html = await fs
-    .readFileSync(join("emails", "welcome.html"), "utf-8")
+  const html = fs
+    .readFileSync(join("public", "/emails/welcome.html"), "utf-8")
     .replace("<!-- geust  -->", name);
 
   await sendEmail({
