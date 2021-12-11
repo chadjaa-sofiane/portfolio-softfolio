@@ -7,12 +7,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 dbConnect();
 
-const sendEmailToGuest = (to: string, name: string) => {
-  const html = fs
+const sendEmailToGuest = async (to: string, name: string) => {
+  const html = await fs
     .readFileSync(join("emails", "welcome.html"), "utf-8")
     .replace("<!-- geust  -->", name);
 
-  sendEmail({
+  await sendEmail({
     body: "there is no body",
     subject: "I'm glade that you contact me.",
     to,
