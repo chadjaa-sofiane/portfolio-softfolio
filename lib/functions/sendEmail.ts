@@ -7,14 +7,19 @@ interface ISendEmailI {
   body: string;
   subject: string;
   text: string;
-  html: string;
+  html?: string;
   to: string;
+  name: string;
 }
 
-const sendEmail = async ({ body, ...restEmailAttr }: ISendEmailI) => {
+const sendEmail = async ({ body, name, ...restEmailAttr }: ISendEmailI) => {
   const mailData = {
     ...restEmailAttr,
     from: "softfolio@chadjaasoftfolio.com",
+    templateId: "d-935671d7ec444a80b85476fd1537c629",
+    dynamic_template_data: {
+      name,
+    },
   };
   return new Promise((resolve, reject) => {
     mail.send(mailData, true, (error, result) => {

@@ -1,22 +1,16 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import sendEmail from "@lib/functions/sendEmail";
 import Message from "@models/message.model";
 import dbConnect from "@util/dbConnect";
-import fs from "fs";
-import { join } from "path";
-import { NextApiRequest, NextApiResponse } from "next";
 dbConnect();
 
 const sendEmailToGuest = async (to: string, name: string) => {
-  const html = fs
-    .readFileSync(join("public", "/emails/welcome.html"), "utf-8")
-    .replace("<!-- geust  -->", name);
-
   await sendEmail({
     body: "there is no body",
     subject: "I'm glade that you contact me.",
     to,
     text: "thank you for contact me dear geust",
-    html,
+    name,
   });
 };
 
