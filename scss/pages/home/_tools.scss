@@ -29,7 +29,7 @@
   &__card:hover {
     background-color: hsl(var(--primary_color));
     color: white;
-    img {
+    .tools__IconField {
       transform: scale(1.25);
     }
   }
@@ -39,12 +39,10 @@
     width: 100%;
     padding-top: 56.25%;
     overflow: none;
-    span {
-      overflow: none;
-    }
-    img {
-      transition: transform 100ms ease-in;
-    }
+    transition: transform 100ms ease-in;
+  }
+  &__title {
+    margin-top: 0.5em;
   }
   &__item__transition-enter {
     opacity: 0;

@@ -27,7 +27,7 @@ const AboutMe = () => {
         aboutMeDivAppear ? styles["homeComponentsApears"] : ""
       }`}
     >
-      <h1> About Me </h1>
+      <h1 className={styles["title"]}> About Me </h1>
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__imageField"]}>
           <div className={styles["aboutMe__imageField__image"]}>

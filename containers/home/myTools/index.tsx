@@ -67,6 +67,9 @@ const MyTools = () => {
       }`}
     >
       <h1 className={styles["title"]}> MY TOOLS </h1>
+      <p className={styles["text"]}>
+        I put all the libraries and the frameworks I have worked with here.
+      </p>
       <Tabs onChange={handleActiveTabs} name="tools" value={active}>
         <Tab value={0} active={true}>
           All

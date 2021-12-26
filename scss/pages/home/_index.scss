@@ -35,6 +35,11 @@
   color: hsl(var(--primary_color));
 }
 
+.text {
+  padding: 1em 0;
+  font-size: var(--fs-700);
+}
+
 .home__svgs {
   :global(#home_svg__lamp) {
     animation: jumping 2000ms alternate infinite ease-in-out;
