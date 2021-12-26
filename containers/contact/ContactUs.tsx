@@ -21,7 +21,7 @@ const ContactUs: React.FC = (props) => {
   const Alert = useAlert();
   const submit: OnSubmit = async (values, clear) => {
     try {
-      const result = await fetch("/api/messages", {
+      const result = await fetch("https://softfolio.vercel.app/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

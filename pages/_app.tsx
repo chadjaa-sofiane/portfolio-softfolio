@@ -10,6 +10,7 @@ import Footer from "@components/Footer";
 import BackToTop from "@components/BackToTop";
 import ContextProvider from "@containers/_app/ContextProvider";
 import "@scss/index.scss";
+import React from "react";
 
 type NextPageWithLayout = NextPage & {
   pageLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -19,7 +20,7 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-const appLayout = (page) => {
+const appLayout = (page) => {  
   return (
     <>
       <Head>
@@ -36,7 +37,7 @@ const appLayout = (page) => {
   );
 };
 
-const MyApp = ({ Component, pageProps, router }: AppPropsWithLayout) => {
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.pageLayout ?? appLayout;
   return (
     <Provider store={store}>

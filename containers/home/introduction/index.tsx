@@ -11,7 +11,7 @@ const Introduction = () => {
           <span className={styles["primary"]}> chadjaa sofiane </span>
         </h1>
         <h2>
-          I'am a <span className={styles["secondary"]}> full-stack </span>
+          I&apos; am a <span className={styles["secondary"]}> full-stack </span>
           developer.
         </h2>
         <p className={styles["description__text"]}>
@@ -28,7 +28,7 @@ const Introduction = () => {
       </div>
       <div className={styles["illustrator__container"]}>
         {/* <Image src="/images/home.png" layout="fill" /> */}
-        <HomeBackground />
+        <HomeBackground className={styles["home__svgs"]} />
       </div>
     </div>
   );

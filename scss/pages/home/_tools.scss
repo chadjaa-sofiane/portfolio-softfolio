@@ -34,9 +34,15 @@
     }
   }
   &__IconField {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: none;
+    span {
+      overflow: none;
+    }
     img {
-      width: 5em;
-      height: 5em;
       transition: transform 100ms ease-in;
     }
   }

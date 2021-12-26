@@ -1,7 +1,7 @@
 @use "./breakPoints" as *;
 
 $font-global: "Source Sans Pro", "Ubuntu", sans-serif;
-$font-btn: "Poppins";
+$font-btn: "Poppins","sans-serif";
 
 @mixin font-size {
   --fs-xl: 3rem;

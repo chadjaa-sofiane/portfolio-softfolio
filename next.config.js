@@ -12,9 +12,10 @@ module.exports = {
         {
           loader: "@svgr/webpack",
           options: {
-            svgConfig: {
+            svgoConfig: {
               plugins: [
                 {
+                  name: "prefixIds",
                   cleanupIDs: false,
                 },
               ],

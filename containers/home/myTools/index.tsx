@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Card } from "@components/Card";
 import Tabs, { ActiveValue, Tab } from "@components/Tabs";
@@ -92,8 +93,9 @@ const MyTools = () => {
                 href={link}
                 target="_blank"
                 className={styles["tools__IconField"]}
+                rel="noreferrer"
               >
-                <img src={Icon} />
+                <Image src={Icon} alt="an image" layout="fill" />
               </a>
               <h6 className={styles["tools__title"]}>{name}</h6>
             </Card>

@@ -1,0 +1,62 @@
+.aboutMe {
+  &__wrapper {
+    background-color: hsl(var(--background_color));
+    position: relative;
+    width: 100%;
+    padding: 2em 0;
+    margin-top: 10em;
+    h1 {
+      color: hsl(var(--primary_color));
+      text-align: center;
+      padding: 0.5em 0;
+    }
+    @include pseudo(after, 0, 0.2em, 0, none, none, 0) {
+      background-color: hsl(var(--primary_color));
+      transition: width 500ms ease-in;
+    }
+  }
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+    gap: 1em;
+  }
+  &__imageField {
+    padding: 2em;
+    display: grid;
+    place-items: center;
+    &__image {
+      position: relative;
+      width: 20em;
+      height: 20em;
+      border: 0.2em solid hsl(var(--primary_color));
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__desc {
+    padding: 2em;
+    &__text {
+      font-size: var(--fs-700);
+      text-align: justify;
+      span {
+        color: hsl(var(--primary_color));
+      }
+    }
+    button {
+      margin: unset;
+      margin-top: 2em;
+    }
+  }
+  &__socialsMedia {
+    margin-top: 2em;
+    display: flex;
+    & > * {
+        margin-right: 2em;
+    }
+  }
+}
