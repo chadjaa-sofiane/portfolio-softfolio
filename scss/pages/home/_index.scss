@@ -35,11 +35,6 @@
   color: hsl(var(--primary_color));
 }
 
-.text {
-  padding: 1em 0;
-  font-size: var(--fs-700);
-}
-
 .home__svgs {
   :global(#home_svg__lamp) {
     animation: jumping 2000ms alternate infinite ease-in-out;
@@ -55,6 +50,9 @@
       fill: red;
     }
   }
+  :global(#home_svg__sky) {
+    animation: 20000ms day_cycle alternate infinite ease;
+  }
 }
 
 @keyframes jumping {
@@ -63,5 +61,19 @@
   }
   to {
     transform: translateY(-5%);
+  }
+}
+@keyframes day_cycle {
+  0% {
+    fill: #4f9bd9;
+  }
+  50% {
+    fill: rgb(209, 129, 0);
+  }
+  55% {
+    fill: darkblue;
+  }
+  100% {
+    fill: rgb(209, 129, 0);
   }
 }
