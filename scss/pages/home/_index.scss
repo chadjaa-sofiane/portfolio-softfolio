@@ -37,7 +37,7 @@
 
 .home__svgs {
   :global(#home_svg__lamp) {
-    animation: jumping 2000ms alternate infinite ease-in-out;
+    animation: jumping 5000ms alternate infinite ease-in-out;
     path:nth-of-type(1) {
       fill: hsl(var(--primary_color) / 0.7);
     }
@@ -52,6 +52,12 @@
   }
   :global(#home_svg__sky) {
     animation: 20000ms day_cycle alternate infinite ease;
+  }
+  :global(#home_svg__clowed) {
+    animation: 20000ms clowed_floating infinite forwards ease;
+  }
+  :global(#home_svg__clowed_2) {
+    animation: 25000ms clowed_floating infinite forwards ease;
   }
 }
 
@@ -75,5 +81,14 @@
   }
   100% {
     fill: rgb(209, 129, 0);
+  }
+}
+
+@keyframes clowed_floating {
+  from {
+    transform: translateX(-35%);
+  }
+  to {
+    transform: translateX(35%);
   }
 }
