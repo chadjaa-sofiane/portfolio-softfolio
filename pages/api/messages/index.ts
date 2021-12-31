@@ -14,6 +14,16 @@ const sendEmailToGuest = async (to: string, name: string) => {
   });
 };
 
+const sendEmailToMe = async (name: string) => {
+  await sendEmail({
+    body: "there is no body",
+    subject: "a geust has sent a messae.",
+    to: "sofianne012@gmail.com",
+    text: `${name} has sent you a message.`,
+    name,
+  });
+};
+
 const getMessage = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { method, body } = req;
@@ -26,6 +36,7 @@ const getMessage = async (req: NextApiRequest, res: NextApiResponse) => {
         // const newMessage = new Message(body);
         // const result = await newMessage.save();
         await sendEmailToGuest(body.email, body.name);
+        await sendEmailToMe(body.name);
         res.status(200).json({ message: "send message successfuly" });
         break;
       default:

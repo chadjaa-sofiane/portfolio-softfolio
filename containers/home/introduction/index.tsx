@@ -22,7 +22,7 @@ const Introduction = () => {
           <button className={styles["button"]}>
             <a href="#services">My services</a>
           </button>
-          <button className={styles["button"]}>my libraries</button>
+          <button className={styles["button"]}>my tools</button>
           <button className={styles["button"]}>my skils</button>
         </div>
       </div>
