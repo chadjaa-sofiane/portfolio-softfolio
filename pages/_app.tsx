@@ -20,7 +20,7 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-const appLayout = (page) => {  
+const appLayout = (page) => {
   return (
     <>
       <Head>
@@ -31,7 +31,7 @@ const appLayout = (page) => {
       <Header />
       <Background />
       <BackToTop />
-      <div className={styles.container}>{page}</div>
+      <div className={styles["container"]}>{page}</div>
       <Footer />
     </>
   );

@@ -26,6 +26,7 @@
   &__card {
     padding: 1em;
     transition: background-color 200ms ease-in, transform 200ms ease-out;
+    max-width: 100%;
     &__title {
       font-size: var(--fs-500);
       color: hsl(var(--primary_color));

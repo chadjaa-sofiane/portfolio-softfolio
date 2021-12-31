@@ -1,7 +1,8 @@
 .description {
+  max-width: 100%;
   display: grid;
   min-height: 25em;
-  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
   margin: 1em 0;
   row-gap: 2em;
   padding: 2em 1em;
@@ -27,9 +28,12 @@
   margin-top: 1em;
 }
 
-.illustrator{
+.illustrator {
   &__container {
-    width: 100%;
+    max-width: 100%;
+    svg {
+      width: 100%;
+    }
     position: relative;
     text-align: center;
   }

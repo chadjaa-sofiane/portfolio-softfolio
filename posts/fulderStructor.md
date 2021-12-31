@@ -153,4 +153,15 @@ the second is merge the pages and the containers, sense the page doesn't do to m
 
 for the regular react app I prefere to use the second one, but in next and gatsby frameworks I have to adapt the first approach sense the pages fulder in these frameworks is sensitive.
 
+### lib fulder
+the lib fulders is one of the must fulders that confuse me, everyone has different difinition for it.
+but I find my self using a lot.
+a main porpuse of that fulder for me is to contain all the diffrent funtions and hooks I use, or hocs. is a fulder I can grap it with me in any project to avoid recreate what I have did before.
+
+![sepreat fulders](/images/posts/lib.PNG)
+
+### stores 
+whatever the state managmer you use, you are probably want to build to build a store fulder to grap all the difference store and the state you have.
+let's say that we are using redux.
+the store fulder will be like this for me :
 

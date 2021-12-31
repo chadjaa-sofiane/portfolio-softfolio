@@ -5,16 +5,15 @@
 @import "aboutme";
 
 .container {
-  width: 1440px;
-  max-width: 100%;
-  margin: auto;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
   min-height: 100vh;
   padding: 0 4em;
-  display: flex;
-  flex-direction: column;
   color: hsl(var(--text_color));
   margin-top: 4em;
   background-color: hsl(var(--background_color) / 0.4);
+  background: rgba(255, 0, 0, 0.192);
   @include breakpoint(medium) {
     padding: 0 1em;
   }

@@ -1,8 +1,8 @@
 .aboutMe {
   &__wrapper {
+    width: 100%;
     background-color: hsl(var(--background_color));
     position: relative;
-    width: 100%;
     padding: 2em 0;
     margin-top: 10em;
     @include pseudo(after, 0, 0.2em, 0, none, none, 0) {
@@ -13,7 +13,7 @@
   &__container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
     gap: 1em;
   }
   &__imageField {
@@ -51,7 +51,7 @@
     margin-top: 2em;
     display: flex;
     & > * {
-        margin-right: 2em;
+      margin-right: 2em;
     }
   }
 }
