@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "@scss/index.module.scss";
 import useObserver from "@lib/hooks/useObserver";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";

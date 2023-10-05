@@ -1,5 +1,5 @@
 import { Card, CardBack } from "@components/Card";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import teamInfo from "public/json/team.json";
 import styles from "@scss/index.module.scss";
 import useObserver from "@lib/hooks/useObserver";

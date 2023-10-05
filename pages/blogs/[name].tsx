@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
+import Image from "next/legacy/image"
 import { useRouter } from "next/router";
 import fs from "fs";
 import { join } from "path";
@@ -31,9 +33,9 @@ const Blog: React.FC<IProps> = ({ blog }) => {
       </Head>
       <div className={styles["blog"]}>
         <div className={styles["blog__container"]}>
-          <h2 className={styles["blog__title"]}> {blog.frontMatter.title} </h2>
+          <h1 className={styles["blog__title"]}> {blog.frontMatter.title} </h1>
           <div className={styles["blog__imageField"]}>
-            <img src={blog.frontMatter.coverImage} alt="blog cover image" />
+            <Image layout="fill" src={blog.frontMatter.coverImage} alt="blog cover image" />
           </div>
           <div
             className={styles["blog__content"]}
@@ -49,11 +51,11 @@ const Blog: React.FC<IProps> = ({ blog }) => {
           </div>
           <div className={styles["blog__date"]}>
             <CalendarTodayIcon />
-            <p> a day ago </p>
+            <p> {blog.frontMatter.date} </p>
           </div>
           <div className={styles["blog__publicher"]}>
-            <div className={styles["blog__publicher__imageField"]}>
-              <img src="/images/zepli.jpg" alt="profile" />
+            <div className={styles["blog__publicher__imageField"]}> 
+              <img  src="/images/me.jpg" alt="profile" />
             </div>
             <p> chadjaa sofiane </p>
           </div>

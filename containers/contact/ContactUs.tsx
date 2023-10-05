@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Form, Field } from "@components/Form";
 import { OnSubmit } from "@components/Form/types";
 import { required, isEmail } from "@components/Form/validations";

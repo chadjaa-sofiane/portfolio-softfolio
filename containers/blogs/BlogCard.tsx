@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useRouter } from "next/router";
 import { Card } from "@components/Card";
 import styles from "@scss/index.module.scss";
@@ -28,6 +28,7 @@ const BlogCard: React.FC<IProps> = (props) => {
         {props.imageSrc && (
           <Image
             src={props.imageSrc}
+            alt="something"
             layout="fill"
           />
         )}

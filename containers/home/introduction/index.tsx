@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HomeBackground from "@public/svgs/home.svg";
 import styles from "@scss/index.module.scss";
 
@@ -27,7 +26,6 @@ const Introduction = () => {
         </div>
       </div>
       <div className={styles["illustrator__container"]}>
-        {/* <Image src="/images/home.png" layout="fill" /> */}
         <HomeBackground className={styles["home__svgs"]} />
       </div>
     </div>

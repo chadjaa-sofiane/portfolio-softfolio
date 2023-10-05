@@ -35,7 +35,7 @@ const Blogs: React.FC<IProps> = ({ blogs }) => {
           </p>
         </div>
         <div className={styles["illustrator__container"]}>
-          {/* <Image src="/images/blogs.png" layout="fill" /> */}
+          {/* <Image src="/images/blogs.png" fill /> */}
           <BlogsBackground className={styles["blogs__svg"]} />
         </div>
       </div>
