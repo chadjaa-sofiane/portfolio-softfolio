@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HomeBackground from "@public/svgs/home.svg";
 import styles from "@scss/index.module.scss";
 

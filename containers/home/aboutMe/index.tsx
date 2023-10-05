@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "@scss/index.module.scss";
 import useObserver from "@lib/hooks/useObserver";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -31,7 +31,7 @@ const AboutMe = () => {
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__imageField"]}>
           <div className={styles["aboutMe__imageField__image"]}>
-            <Image src="/images/me.jpg" fill alt="my face" />
+            <Image src="/images/me.jpg" layout="fill" alt="my face" />
           </div>
         </div>
         <div className={styles["aboutMe__desc"]}>

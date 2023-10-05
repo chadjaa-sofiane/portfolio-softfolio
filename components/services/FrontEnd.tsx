@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import ServicesInfoLayout from "./ServicesInfoLayout";
 import styles from "@scss/index.module.scss";
 
@@ -18,7 +18,7 @@ const FrontEnd: React.FC = () => {
           <Image
             src="/images/web.jpg"
             alt="fron end developement"
-            fill
+            layout="fill"
           />
         </div>
       </div>
