@@ -17,8 +17,8 @@ const Shape: React.FC<IProps> = ({ dimentions, changeShapeDimention }) => {
     shape.current.style.width = `${dimentions.width}em`;
     shape.current.style.height = `${dimentions.height}em`;
     shape.current.style.left = `${dimentions.left}em`;
-    shape.current.style.animationDuration = `${dimentions.width * 1400}ms`;
-    shape.current.style.animationDelay = `${dimentions.width * 1000}ms`;
+    shape.current.style.animationDuration = `${dimentions.width * 2500}ms`;
+    shape.current.style.animationDelay = `${dimentions.width * 400}ms`;
   }, []);
   return <span ref={shape} className={styles.background__shape}></span>;
 };
