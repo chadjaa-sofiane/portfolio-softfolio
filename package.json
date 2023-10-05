@@ -16,6 +16,7 @@
     "@sendgrid/mail": "^7.6.0",
     "@types/marked": "^4.0.1",
     "babel-core": "^6.26.3",
+    "dayjs": "^1.11.10",
     "global": "^4.4.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.3.1",
