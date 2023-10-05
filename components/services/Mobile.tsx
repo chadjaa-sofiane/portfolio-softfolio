@@ -12,7 +12,7 @@ const Mobile: React.FC = () => {
           <p> I have knowledge in it as I have in react, and I can build full app using it. </p>
         </div>
         <div className={styles["serviceInfo__imageField"]}>
-          <Image src="/images/phone.jpg" alt="phone developement" layout="fill" />
+          <Image src="/images/phone.jpg" alt="phone developement" fill/>
         </div>
       </div>
     </ServicesInfoLayout>

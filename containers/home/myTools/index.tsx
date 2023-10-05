@@ -95,7 +95,7 @@ const MyTools = () => {
                 className={styles["tools__IconField"]}
                 rel="noreferrer"
               >
-                <Image src={Icon} alt="an image" layout="fill" />
+                <Image src={Icon} alt="an image" fill/>
               </a>
               <h6 className={styles["tools__title"]}>{name}</h6>
             </Card>

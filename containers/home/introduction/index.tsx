@@ -27,7 +27,6 @@ const Introduction = () => {
         </div>
       </div>
       <div className={styles["illustrator__container"]}>
-        {/* <Image src="/images/home.png" layout="fill" /> */}
         <HomeBackground className={styles["home__svgs"]} />
       </div>
     </div>

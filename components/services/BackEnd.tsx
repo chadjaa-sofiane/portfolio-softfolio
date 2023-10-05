@@ -22,7 +22,7 @@ const BackEnd: React.FC = () => {
           <Image
             src="/images/backend.jpg"
             alt="back end developement"
-            layout="fill"
+            fill
           />
         </div>
       </div>

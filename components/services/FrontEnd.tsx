@@ -18,7 +18,7 @@ const FrontEnd: React.FC = () => {
           <Image
             src="/images/web.jpg"
             alt="fron end developement"
-            layout="fill"
+            fill
           />
         </div>
       </div>

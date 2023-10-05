@@ -28,7 +28,8 @@ const BlogCard: React.FC<IProps> = (props) => {
         {props.imageSrc && (
           <Image
             src={props.imageSrc}
-            layout="fill"
+            alt="something"
+            fill
           />
         )}
       </div>

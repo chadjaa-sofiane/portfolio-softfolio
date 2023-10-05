@@ -31,7 +31,7 @@ const AboutMe = () => {
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__imageField"]}>
           <div className={styles["aboutMe__imageField__image"]}>
-            <Image src="/images/me.jpg" layout="fill" alt="my face" />
+            <Image src="/images/me.jpg" fill alt="my face" />
           </div>
         </div>
         <div className={styles["aboutMe__desc"]}>
